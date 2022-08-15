@@ -1,0 +1,209 @@
+{
+  "renewableEnergy": {
+    "title": "Onsite Renewable Energy Generation",
+    "introSummary": "The following requirement applies to new buildings and some extensions with a favourable aspect.",
+    "introText": [
+      "Generating renewable energy onsite improves energy resilience and reduces fuel prices for occupiers. Onsite energy generation will also help reduce energy demand from the national grid, allowing more energy to be used to support the transition to electric vehicles and heat pumps, both of which are important elements of the UK decarbonisation strategy."
+    ],
+    "require": [
+      "For major and minor planning applications, adopted JLP policy DEV32.5 will apply to secure an equivalent 20% carbon saving through onsite renewable energy generation.",
+      "The baseline Target Emissions Rate (TER) will be calculated using the most up-to-date version of SAP10 (or other versions of SAP should SAP10 be superseded). This is to ensure the latest carbon factors are used, creating both a robust baseline for the proposal, and to calculate the most accurate carbon savings from renewable energy generation."
+    ],
+    "requireExpansions": [
+      {
+        "title": "Extensions",
+        "text":   "Extensions that benefit from favourable conditions to support roof mounted solar photovoltaic (PV) panels, and where the host building does not already generate renewable energy onsite, should include a rooftop PV system of a minimum installed capacity of 1 kWp."
+      }
+    ],
+    "further": [
+      {
+        "text": "Building Regulation Approved Document Part L has been updated in December 2021 and introduced in June 2022, and this introduces higher standards of thermal efficiency for buildings. As such, it is appropriate to ensure that the DEV32.5 20% carbon reduction requirement is only secured through onsite renewable energy generation, with no mechanism to count alternative savings through a fabric first approach (as this has already been incorporated into the 2021 Part L uplift)."
+      },
+      {
+        "text": "Favourable conditions for extensions include no overshading of the proposed roof, with the roof having an easterly, southerly or westerly aspect. A 1 kWp is likely to comprise of at least 4 solar PV panels."
+      },
+      {
+        "text": "Approved Document Part L 2021",
+        "link": "https://www.gov.uk/government/publications/conservation-of-fuel-and-power-approved-document-l"
+      },
+      {
+        "text": "Energy Saving Trust guide to solar panels",
+        "link": "https://energysavingtrust.org.uk/advice/solar-panels/"
+      },
+      {
+        "text": "The Renewable Energy Hub",
+        "link": "https://www.renewableenergyhub.co.uk/"
+      }
+    ]
+  },
+  "energyStorage": {
+    "title": "Energy Storage",
+    "introSummary": "The following requirement applies to new buildings and extensions that include solar photovoltaic (PV).",
+    "introText": ["Battery storage enables buildings to better use energy that is generated onsite, or purchased at favourable tariffs overnight when demand is low. The use of battery storage as part of smart system has benefits on the grid, as it reduces demand at peak times, and allows users to be more resilient to power outages, as well as paying less for the energy they consume."],
+    "require": [
+      "New development proposals should identify on submitted floor plans an area close to the main circuit board that could accommodate a battery storage system capable of meeting at least 50% of the daily energy demand of the building, unless this is technically unfeasible, or incompatible with the technological requirements of a specific battery."
+    ],
+    "further": [
+      {
+        "text": "Batteries can be floor or wall mounted, and space needs to be identified that allows for suitable access and maintenance arrangements. Although a battery storage system does not need to be located next to a mains circuit board or solar PV inverter, it does make for a less intrusive installation process for the occupier. "
+      },
+      {
+        "text": "If suitable space next to the mains circuit board cannot be accommodated, alternative spaces will be considered that are compatible with the technical requirements of a specific product or system."
+      },
+      {
+        "text": "Energy Saving Trust guide to battery storage",
+        "link": "https://energysavingtrust.org.uk/advice/storing-energy/https://energysavingtrust.org.uk/advice/storing-energy/"
+      }
+    ]
+  },
+  "heatingSystems": {
+    "title": "Low & Zero Carbon Space & Water Heating Systems",
+    "introSummary":"The following requirement applies to all new buildings. There are no requirements for extensions.",
+    "introText": [
+      "In order to meet binding legislative carbon reduction targets, the UK needs to rapidly decarbonise all aspects of societal behaviour. ",
+      "Reducing reliance on fossil fuels is the single biggest action that will contribute to rapid decarbonisation. For many, this will result in the installation of a heat pump, although other systems may also meet the wider policy aims, such as biomass boilers, solar thermal heating, micro hydro-electricity or mini combined heat and power systems."
+    ],
+    "require": [
+      "All minor and major development proposals should be served by low or zero carbon space and water heating and where relevant cooling systems, with an emphasis on ground, air and water source heat pumps. Other options for low carbon heating systems include solar thermal/ solar thermodynamic/ or solar photovoltaic thermal (PVT) systems or biomass in rural areas."
+    ],
+    "further": [
+      {
+        "text":"Buildings served by district energy systems for heating and cooling will be considered to meet the requirements of the policy, providing the fuel used within the district energy network is low or zero carbon."
+      },
+      {
+        "text": "Proposals that meet the prescribed characteristics in the SPD, and/or are in a defined area for district energy potential will need to connect to an existing heat network, where this exists, be future-proofed for connection to a future heat network or provide analysis and justification for why they cannot connect to a heat network."
+      },
+      {
+        "text": "Hydrogen based systems are not considered compatible with the aims of this policy, as the fuel is not proven at scale for domestic or commercial buildings, and only ‘green’ energy is low or zero carbon, with grey or blue hydrogen being formed from fossil fuels."
+      },
+      {
+        "text": "The Renewable Energy Hub",
+        "link": "https://www.renewableenergyhub.co.uk/"
+      },
+      {
+        "text": "Micro Certification Scheme",
+        "link": "https://mcscertified.com/"
+      }
+    ]
+  },
+  "buildingMaterial":{
+    "title": "Resilient & Low Carbon Building Materials",
+    "introSummary": "The following requirement applies to both new builds and extensions.",
+    "introText": [
+      "The number and type of materials used to construct a building is extensive, and the planning process rarely seeks to influence materials used in construction, except where there may be an issue of visual impact. However, as well considering the colour and tone of certain materials, DEV32.1 requires us to reduce the wider environmental impact of building materials, and this requirement is rarely considered or conditioned."
+    ],
+    "require": [
+      "Slate used on all new buildings with pitched roofs and natural stone used for paving must accord with the hierarchy of origin as well as meeting the requirements to be compatible with local vernacular and design:",
+      "• Reclaimed UK or European slates where available with proof of origin from supplier",
+      "• New UK derived slates with proof of origin from supplier",
+      "• New European derived slates with proof of origin from supplier",
+      "• No other natural slate products will be considered acceptable",
+      " All new roof slates and natural stone must be covered by a minimum warranty period of 50 years."
+    ],
+    "further": [
+      {
+        "text":       "Many building materials are increasingly accompanied by information that quantifies not only the origin of the product, but also the environmental impact. Where possible, a product should be obtained that has an Environmental Product Declaration (EPD). If an EPD is not available, a verifiable certificate of origin or provenance will need to be supplied."
+      },
+      {
+        "text": "Environmental Product Declaration",
+        "link": "https://www.oneclicklca.com/simple-epd-guide/#:~:text=What%20EPD%20stands%20for,or%20material%20over%20its%20lifetime."
+      }
+    ]
+  },
+  "demolition": {
+    "title": "Demolition & Rebuild",
+    "introSummary": "The following requirement applies to new builds. There are no requirements for extensions.",
+    "introText": [
+      "The JLP policies Dev 31 and DEV32.1 advocate reuse, recycling and resource minimisation through the development process. In 2019, the Architects Journal launched their RetroFirst campaign, which seeks to ensure that our existing buildings in the UK are only demolished and replaced as a last resort, and where retrofitting is proven to be not technically feasible. However, we recognise that there are some circumstances when demolition may be necessary."
+    ],
+    "require": [
+      "Priority will be given to the reuse and retrofitting of buildings. Where an existing building is proposed to be demolished and rebuilt, the net overall carbon cost of the project should be offset within 25 years through carbon savings achieved by operational use of the replacement building. ",
+      "A project wide assessment of the net carbon impact of the development proposal will form the basis of how much energy needs to be saved through operational efficiencies, see Further Information. ",
+      "The age of a building is not in itself justification for demolishing it. Old windows can be replaced, insulation added either internally or externally, roofs replaced with more resilient and lower impact materials. Air tightness can be greatly improved by combining external interventions, with particular focus on the reinstatement of doors and window. A comprehensive approach to improving air tightness through whole-building retrofit will also allow for a suitable ventilation system to be designed and incorporated."
+    ],
+    "further": [
+      {
+        "text": "The baseline for this assessment will be the target emissions rate as derived from building regulations Part L, using the most up-to-date SAP software, with savings calculated using the difference between the Target Emissions Rate (TER) and the Dwelling Emissions Rate (DER, for domestic buildings) or Building Emissions Rate (BER, for non-domestic buildings)."
+      },
+      {
+        "text": "Embodied carbon calculations for existing and proposed dwellings should be submitted in full using software that complies with RICS whole life carbon assessment principles."
+      },
+      {
+        "text": "Justification for demolition will only be considered acceptable under the following circumstances:"
+      },
+      {
+        "text": "1. The building is structurally unsafe and is in a condition that cannot be safely remediated as part of a comprehensive retrofit; or,"
+      },
+      {
+        "text": "2. The demolition and rebuild will result in significant social and environmental benefits, such as large-scale regeneration, and affordable-housing led development proposals"
+      },
+      {
+        "text": "((T x floorspace) x 25) – (D x floorspace) x 25)) = more than or equal to the net embodied carbon of original and new structure."
+      },
+      {
+        "text": "Architects Journal RetroFirst",
+        "link": "https://www.architectsjournal.co.uk/news/retrofirst"
+      },
+      {
+        "text": "RICS whole life carbon assessment for the built environment",
+        "link": "https://www.rics.org/globalassets/rics-website/media/news/whole-life-carbon-assessment-for-the--built-environment-november-2017.pdf"
+      }
+    ]
+  },
+  "electricVehicles": {
+    "title": "Electric Vehicle Charging Points",
+    "introSummary": "The following requirement applies to new commercial buildings, commercial and mixed-use buildings undergoing major renovation and extensions where the extension is adjacent to a parking space.",
+    "introText": [
+      "Electric vehicles represent an opportunity to reduce reliance on fossil fuels and will contribute to decarbonising transport emissions across the UK as part of the government’s Transport Decarbonisation Plan. To ensure the transition to electric vehicles is achieved at a trajectory that secures adequate levels of emissions savings soon enough, charging infrastructure must be available and accessible in all new developments."
+    ],
+    "require": [
+      "The quantity of charging points for non-domestic development will need accord with 2021 Approved Document Part S. ",
+      "The minimum installed capacity for each charging point will be;",
+      "• Class E – 22 kW",
+      "• All other non-domestic development – 11 kW"
+    ],
+    "further": [
+      {
+        "text": "Whilst switching fuels in private and commercial vehicles has a clear role to play in decarbonising transport, it should not be confused with the greater benefits that can be achieved by reducing the need to travel in the first place and increasing the number of journeys by sustainable and active modes of travel."
+      },
+      {
+        "text": "Approved Document Part S 2021",
+        "link": "https://www.gov.uk/government/publications/infrastructure-for-charging-electric-vehicles-approved-document-s"
+      }
+    ]
+  },
+  "activeTravel": {
+    "title": "Active & Sustainable Travel",
+    "introSummary": "The following requirement applies differently to minor and major new commercial developments with a floor area over 1000 square metres or site area more than 1 hectare. There are no requirements for extensions.",
+    "introText": [
+      "The location of new development should continue to be considered against the adopted spatial strategy set out in the JLP and specifically policies SPT1, SPT2 and TTV1 and TTV2. Switching to EV is not a substitute for sound placemaking based around the core principles of reducing the need to travel and maximising the use of sustainable and active travel modes. ",
+      "Any development proposal that locks-in reliance upon the private car, and exclusively caters for car borne customers, such as drive through restaurants, cannot be considered to meet the most basic requirements of the JLP or accord with paragraph 104 of the National Planning Policy Framework."
+    ],
+    "require": [
+      "All new buildings must incorporate measures to encourage use of active and sustainable travel options and should avoid locking-in reliance on the private car. "
+    ],
+    "requireExpansions": [
+      {
+        "title": "Minor Development",
+        "text": [
+          "Minor development proposals should be guided by the requirements of the adopted policies SPT10, SPT12.9, DEV15 and DEV29, as well as the associated sections of the SPD."
+        ]
+      },
+      {
+        "title": "Major Development",
+        "text": [
+          "Major developments will need to include, in addition to existing JLP and SPD requirements, an assessment of sustainable and active travel opportunities and constraints in their Design and Access Statement (DAS). This should identify what benefits are being proposed as part of the development highlighting how these benefits will achieve modal shift within and beyond the proposed development."
+        ]
+      }
+    ],
+    "further": [
+      {
+        "text": "Government policy is increasingly supportive of locating development in the most sustainable and accessible settlements to facilitate modal shift to active travel (Gear Change: A bold vision for cycling and walking) and bus service (Bus Back Better: National Bus Strategy for England)."
+      },
+      {
+        "text": "Planning and Net Zero Transport",
+        "link": "https://www.rtpi.org.uk/media/9233/rtpi-net-zero-transport-january-2021.pdf"
+      }
+    ]
+  }
+}

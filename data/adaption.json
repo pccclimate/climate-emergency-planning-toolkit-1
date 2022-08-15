@@ -1,0 +1,95 @@
+{
+  "solar": {
+    "title": "Passive Solar Design",
+    "introText": [
+     "The benefit of including passive solar design information at planning application stage is that it can be amended during the consideration of the application. This is preferable to identifying and issue at the inspection stage as to rectify any issues then is likely to result in resubmission of planning information and expensive reconstruction of the building."
+    ],
+    "require": [
+      "All development is required to:",
+      "• Be compliant with 2021 Building Regulations Approved Document Part O – Overheating.SVGID_1_allSVGID_1_all and provide a copy of the Part O Compliance Checklist (Appendix B) as part of the planning application",
+      "• Incorporate sound design principles that take every opportunity to incorporate passive solar gain in line with SPD guidance."
+    ],
+    "further": [
+      {
+        "text": "Approved document Part O – Overheating applies to all new buildings and extensions, and includes specific window to floor ratios that need to be adhered to in each elevation.SVGID_1_allThe checklist is a summary document that collates all of the room and window data into a concise format. "
+      },
+      {
+        "text": "The opportunities for maximising the cooling benefits of planting should not be restricted to areas surrounding a building, but also within the fabric of the building itself. As global temperatures rise, we will need to look at whole systems approaches to reducing the risk of overheating, not just in the design and orientation of buildings themselves, but through managing the relationship between buildings and their surroundings. Green walls and roofs offer significant potential to reduce the risk of overheating, whilst also benefitting biodiversity and habitat creation. All proposals should therefore demonstrate what additional adaptation measures are included to reduce the risk of overheating."
+      },
+      {
+        "text": "Further guidance on green walls and roofs will be made available."
+      },
+      {
+        "text": "Further guidance on green walls and roofs will be made available.",
+        "link": "https://www.gov.uk/government/publications/overheating-approved-document-o"
+      }
+    ]
+  },
+  "soil": {
+    "title": "Protecting Our Soil Resource",
+    "introText": [
+      "The JLP prioritises the development of previously developed land and promotes resilient development and policy DEV2.6 gives further detail on protecting soils. Because of the importance our soil resource plays in carbon storage the plan seeks to protect greenfield sites unless allocated or there is a need for the development."
+    ],
+    "require": [
+      "The Climate Emergency Compliance Form should include measures to protect the soil resource. "
+    ],
+    "further": [
+      {
+        "text": "Soils support biodiversity, sequester carbon and absorb water and play an important role in capturing carbon, providing sustainable drainage, as well as increasing resilience to extreme weather event. The loss of soil cover to impermeable surfaces has numerous detrimental impacts which erode their important role in addressing the climate emergency. "
+      }
+    ]
+  },
+  "tree": {
+    "title": "Protecting & Enhancing Tree Cover",
+    "introText": [
+      "JLP policy DEV28 protects trees, woodlands and hedgerows, require net gain and appropriate mitigation. Trees are crucial in delivering a wide range of adaptation benefits and for helping to maintain our health and wellbeing; for example, spending time around trees and looking at trees can reduce stress, lower blood pressure, and improve mood."
+    ],
+    "require": [
+      "The Climate Emergency Compliance Form should include measured to protect and enhance tree cover and to address their important role in the climate emergency. "
+    ],
+    "further": [
+      {
+        "text": "Trees play a vital role in addressing the climate emergency through their storage of carbon, reducing run off, increasing drainage, shade and improving air quality, as well as addressing local climatic effects and reducing energy demand. Trees also support a huge number of habitats and species. Tree planting at a massive scale is a key component of the government plan to net zero. Existing trees, especially mature trees that have significant value should be protected and development should provide enhanced tree cover with the right new trees in the right places."
+      }
+    ]
+  },
+  "green": {
+    "title": "Protecting & Enhancing Gardens, Green Spaces & Greenfield Sites ",
+    "introText": "JLP policy SPT1 and SPT2 prioritise the re-use of previously developed sites reducing the need for greenfield development. This in turn helps protect natural assets and promotes the creation of a wildlife rich local environment with well-designed public and natural spaces. These key strategic policies, along with other policies in the JLP collectively promote resilient development and the efficient use of land protecting and enhancing gardens, green spaces and greenfield sites.",
+    "require": [
+      "The Climate Emergency Compliance Form should demonstrate how the benefits and functions of all green spaces will be protected and enhanced."
+    ],
+    "further": [
+      {
+        "text": "Green spaces and green fields sites have an intrinsic value as a natural resource that makes a significant contribution to addressing the climate emergency. They offer a wide range of existing multifunctional benefits. These include as a soil resource, which provides an important role in capturing carbon, and providing increased resilience to extreme weather events through managing drainage and surface water. As well as making a positive contribution to climate change adaptation they are an important source of biodiversity and habitats as well as playing an important role in maintaining our health and wellbeing. This includes delivering opportunities for food production that reduces food miles and grocery costs, growing food protects the soil, creates habitats, manages water run-off and helps reduce the risk of overheating."
+      }
+    ]
+  },
+  "water":{
+    "title": "Delivering Sustainable Drainage, Surface Water Management & Restricting Urban Creep",
+    "introText": "The ability to absorb water through permeable surfaces reduces the need to manage water offsite, which in turn reduces the risk of flooding. Urban creep is the gradual paving of porous surfaces and leads to an increased need to manage surface water. Good water management onsite will also assist in supporting biodiversity and habitats, as well as reducing the risk of overheating.",
+    "require": [
+      "The Climate Emergency Compliance Form should demonstrate how surface water will be managed to ensure sustainable water drainage and reduced flood risk. "
+    ],
+    "further": [
+      {
+        "text": "Specific rules apply for householders wanting to pave over their front gardens. You will not need planning permission if a new or replacement driveway of any size uses permeable (or porous) surfacing which allows water to drain through, such as gravel, permeable concrete block paving or porous asphalt, or if the rainwater is directed to a lawn or border to drain naturally. However, if the surface to be covered is more than five square metres planning permission is required for laying traditional, impermeable driveways that do not provide for the water to run to a permeable area. "
+      }
+    ]
+  },
+  "biodiversity": {
+    "title": "Delivering Biodiversity Net Gain & Habitat Improvements ",
+    "introText": "JLP policy DEV26 requires 10% biodiversity net gain in all major development, a proportionate approach to minor development and enhancements for wildlife from all scales of development. The SPD provides detailed guidance including provision for 30-year maintenance and acknowledges that there will be a new Biodiversity Metric and updated guidance will be required. The Environment Act increases the importance of this issue and makes 10% net gain mandatory.",
+    "require": [
+      "The Climate Emergency Compliance Form should demonstrate how appropriate levels of biodiversity net gain will be achieved. "
+    ],
+    "further": [
+      {
+        "text": "Biodiversity and habitats are hugely significant to personal health and wellbeing, supporting ecosystems, enhancing ecology, capturing and storing carbon capture and encouraging food production. The RSPB reports that the UK ranks in the bottom 12% of countries globally for biodiversity intactness, and has lost 60% of our habitats since 1970.  "
+      },
+      {
+        "text": "New guidance will be produced on biodiversity net gain including habitat banking and costs. In addition, a Green Space Factor Tool will be produced and consulted on separately."
+      }
+    ]
+  }
+}
