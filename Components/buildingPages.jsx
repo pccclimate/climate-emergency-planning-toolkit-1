@@ -2,16 +2,28 @@ import {Box, Container, Typography} from "@mui/material";
 import {useContext} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
 import residentialData from '../data/residential.json'
+import allData from '../data/adaption.json'
+import commercial from '../data/commercial.json'
 import {AnimatePresence, motion} from "framer-motion";
 import {TitleSections} from "./titleSections";
 import {Require} from "./require";
 import {Info} from "./info";
+import {useRouter} from "next/router";
 
 const transition = { ease: "linear", duration: 1, opacity: {delay: 0.5}}
 
+
+const dataSet = {
+    '/all_buildings': allData,
+    '/residential_buildings': residentialData,
+    '/commercial_buildings': commercial,
+}
+
+
 export const BuildingPages = ({svg, title}) => {
     const { selected } = useContext(SelectedContext)
-    const selectedData = residentialData[selected]
+    const {pathname} = useRouter()
+    const selectedData = dataSet[pathname][selected]
 
     return (
         <Container maxWidth={'xl'} sx={{ py: 5}}>
@@ -21,7 +33,7 @@ export const BuildingPages = ({svg, title}) => {
                         layout
                         key='header'
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1, height: 120 }}
+                        animate={{ opacity: 1, height: 140 }}
                         transition={{ ease: "easeIn", duration: 1, opacity: { duration: 0.5  }}}
                         exit={{opacity: 0, height: 0 }}
                     >

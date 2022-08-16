@@ -9,7 +9,7 @@ export default function Page() {
         <Layout>
             <Box sx={{ display: 'flex', alignItems: 'stretch', height: '100%'}}>
                 <SideMenu />
-                <BuildingPages svg={AllSVG} title={'Adaptation Measures for All Extensions and New Developmen'}/>
+                <BuildingPages svg={AllSVG} title={'Adaptation Measures for All Extensions and New Development'}/>
             </Box>
         </Layout>
     )
