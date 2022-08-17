@@ -11,6 +11,6 @@ export const themeOptions = createTheme({
         },
     },
     typography: {
-        fontFamily: 'Lato',
+        fontFamily: "'Lato', sans-serif",
     },
 });

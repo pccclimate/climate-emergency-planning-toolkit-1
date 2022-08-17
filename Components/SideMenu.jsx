@@ -6,6 +6,7 @@ import {useContext, useState} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
 import {residentialRefs} from "../data/residentialRefs";
 import {allBuildingsRefs} from "../data/allBuildingsRefs";
+import {commercialRef} from "../data/commercialRef";
 
 const homeLinks = [
     {
@@ -110,12 +111,71 @@ const allBuildings = [
     }
 ]
 
+const commercialBuildings = [
+    {
+        title: 'Extensions',
+        links: [
+            {
+                title: 'Renewable Energy',
+                ref: commercialRef.renewableEnergy
+            },
+            {
+                title: 'Energy Storage',
+                ref: commercialRef.energyStorage
+            },
+            {
+                title: 'Building Materials',
+                ref: commercialRef.buildingMaterial
+            },
+            {
+                title: 'Electric Vehicles',
+                ref: commercialRef.electricVehicles
+            }
+        ]
+    },
+    {
+        title: 'New Builds',
+        links: [
+            {
+                title: 'Renewable Energy',
+                ref: commercialRef.renewableEnergy
+            },
+            {
+                title: 'Energy Storage',
+                ref: commercialRef.energyStorage
+            },
+            {
+                title: 'Heating Systems',
+                ref: commercialRef.heatingSystems
+            },
+            {
+                title: 'Building Materials',
+                ref: commercialRef.buildingMaterial
+            },
+            {
+                title: 'Demolition & Rebuild',
+                ref: commercialRef.demolition
+            },
+            {
+                title: 'Electric Vehicles',
+                ref: commercialRef.electricVehicles
+            },
+            {
+                title: 'Active & Sustainable Travel',
+                ref: commercialRef.activeTravel
+            }
+        ]
+    },
+]
+
 const HomeLinksComponent = ({setTopMenu}) => {
+    const {pathname} = useRouter()
+
     return (
         <MenuList>
             {homeLinks.map(({title, link}) => (
                 <Link key={link} href={link}>
-                    <MenuItem onClick={() => setTopMenu(false)}>
+                    <MenuItem onClick={() => setTopMenu(false)} selected={`.${pathname}` === link}>
                         <ListItemText>{title}</ListItemText>
                     </MenuItem>
                 </Link>
@@ -127,11 +187,11 @@ const HomeLinksComponent = ({setTopMenu}) => {
 const nav = {
     '/all_buildings': allBuildings,
     '/residential_buildings': residential,
-    '/commercial_buildings': residential,
+    '/commercial_buildings': commercialBuildings,
 }
 
 const DrillDownMenu = ({setTopMenu}) => {
-    const { setSelected } = useContext(SelectedContext)
+    const { selected, setSelected } = useContext(SelectedContext)
     const {pathname} = useRouter()
     const navigation = nav[pathname]
 
@@ -155,7 +215,7 @@ const DrillDownMenu = ({setTopMenu}) => {
                     <Box sx={{ pb: 2 }}>
                         {title && <Typography sx={{fontWeight: 'bold', pl: 2, pt: 2, pb: 1}}>{title}</Typography>}
                         {links.map(({title, ref}, i) => (
-                            <MenuItem key={i} onClick={() => setSelected(ref)} sx={{ pl: title ? 4 : 2 }}>
+                            <MenuItem key={i} onClick={() => setSelected(ref)} sx={{ pl: title ? 4 : 2 }} selected={ref === selected}>
                                 <ListItemText>{title}</ListItemText>
                             </MenuItem>
                         ))}

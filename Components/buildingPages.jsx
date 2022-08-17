@@ -1,4 +1,4 @@
-import {Box, Container, Typography} from "@mui/material";
+import {Box, Chip, Container, Typography} from "@mui/material";
 import {useContext} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
 import residentialData from '../data/residential.json'
@@ -9,6 +9,7 @@ import {TitleSections} from "./titleSections";
 import {Require} from "./require";
 import {Info} from "./info";
 import {useRouter} from "next/router";
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
 const transition = { ease: "linear", duration: 1, opacity: {delay: 0.5}}
 
@@ -21,12 +22,12 @@ const dataSet = {
 
 
 export const BuildingPages = ({svg, title}) => {
-    const { selected } = useContext(SelectedContext)
+    const { selected, setSelected } = useContext(SelectedContext)
     const {pathname} = useRouter()
     const selectedData = dataSet[pathname][selected]
 
     return (
-        <Container maxWidth={'xl'} sx={{ py: 5}}>
+        <Container maxWidth={'xl'} sx={{ py: 5 }}>
             <AnimatePresence  initial={false}>
                 {!selectedData && (
                     <motion.div
@@ -41,7 +42,7 @@ export const BuildingPages = ({svg, title}) => {
                             {title}
                         </Typography>
                 </motion.div>)}
-                <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+                <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative'}}>
                     {selectedData && (
                         <motion.div
                             layout
@@ -54,6 +55,12 @@ export const BuildingPages = ({svg, title}) => {
                             <TitleSections item={selectedData}/>
                         </motion.div>
                     )}
+                    {!selectedData && (
+                        <Box sx={{ position: 'absolute', top: 20, left: '10%' }}>
+                            <Chip label={'Click on the interactive elements for more information'} variant="outlined" color="success" />
+                        </Box>
+                    )}
+
                     <motion.div
                         key='svg'
                         layout
@@ -61,7 +68,21 @@ export const BuildingPages = ({svg, title}) => {
                         animate={{ flex: 4, maxWidth: 1100, padding: 15 }}
                         transition={{ ease: "linear", duration: 1, delay: 0.5 }}
                     >
-                        {svg()}
+                        <Box sx={{ position: 'relative '}}>
+                            {selectedData && (
+                                <motion.div
+                                    style={{ position: 'absolute', top: -20, left: -20 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{opacity: 0 }}
+                                    initial={{opacity: 0 }}
+                                    transition={transition}
+                                >
+                                    <ArrowCircleLeftIcon onClick={() => {setSelected(undefined)}} sx={{
+                                        cursor: 'pointer', fontSize: 80, color: 'rgb(154, 194, 28)', stroke: 'white', strokeWidth: 0.3, transition: '0.4s', '&:hover': {color: 'rgb(35, 53, 105)'} }} />
+                                </motion.div>
+                            )}
+                            {svg()}
+                        </Box>
                         {selectedData && (
                             <motion.div
                                 key='info'
