@@ -7,6 +7,7 @@ import {SelectedContext} from "../context/selectedElementContext";
 import {residentialRefs} from "../data/residentialRefs";
 import {allBuildingsRefs} from "../data/allBuildingsRefs";
 import {commercialRef} from "../data/commercialRef";
+import {Glossary} from "./buildingPages";
 
 const homeLinks = [
     {
@@ -165,7 +166,7 @@ const commercialBuildings = [
                 ref: commercialRef.activeTravel
             }
         ]
-    },
+    }
 ]
 
 const HomeLinksComponent = ({setTopMenu}) => {
@@ -202,13 +203,14 @@ const DrillDownMenu = ({setTopMenu}) => {
 
     return (
         <>
+            <Divider />
             <MenuItem sx={{ py: 2 }} onClick={handleTopMenu}>
                 <ListItemIcon>
                     <ArrowBackIosNewIcon />
                 </ListItemIcon>
                 Building Options
             </MenuItem>
-        <MenuList>
+        <MenuList sx={{py: 0}}>
             <Divider />
             {navigation.map(({title, links}, i) => (
                 <Box key={i}>
@@ -223,7 +225,11 @@ const DrillDownMenu = ({setTopMenu}) => {
                 <Divider />
             </Box>
             ))}
+            <MenuItem selected={selected === Glossary}>
+                <ListItemText onClick={() => setSelected(Glossary)}>Glossary</ListItemText>
+            </MenuItem>
         </MenuList>
+            <Divider />
         </>
     )
 }
@@ -232,8 +238,10 @@ export const SideMenu = () => {
 
     return (
         <Paper>
-            <Box sx={{ width: 300 }}>
-                {topMenu ? <HomeLinksComponent setTopMenu={setTopMenu} /> : <DrillDownMenu setTopMenu={setTopMenu} />}
+            <Box sx={{ width: 300, minHeight: 'calc(100vh - 170px)' }}>
+                <Box sx={{ position: 'fixed', width: 300}}>
+                    {topMenu ? <HomeLinksComponent setTopMenu={setTopMenu} /> : <DrillDownMenu setTopMenu={setTopMenu} />}
+                </Box>
             </Box>
         </Paper>
     )

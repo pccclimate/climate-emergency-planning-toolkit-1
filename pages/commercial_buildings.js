@@ -7,7 +7,7 @@ import {CommercialSVG} from "../Components/commercialSVG";
 export default function Page() {
     return (
         <Layout>
-            <Box sx={{ display: 'flex', alignItems: 'stretch', height: '100%'}}>
+            <Box sx={{ display: 'flex'}}>
                 <SideMenu />
                 <BuildingPages svg={CommercialSVG} title={'Guidance for Commercial Buildings'}/>
             </Box>

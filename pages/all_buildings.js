@@ -7,7 +7,7 @@ import {AllSVG} from "../Components/allSVG";
 export default function Page() {
     return (
         <Layout>
-            <Box sx={{ display: 'flex', alignItems: 'stretch', height: '100%'}}>
+            <Box sx={{ display: 'flex'}}>
                 <SideMenu />
                 <BuildingPages svg={AllSVG} title={'Adaptation Measures for All Extensions and New Development'}/>
             </Box>

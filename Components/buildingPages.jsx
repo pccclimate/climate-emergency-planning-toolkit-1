@@ -10,6 +10,7 @@ import {Require} from "./require";
 import {Info} from "./info";
 import {useRouter} from "next/router";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import {GlossaryPage} from "./Glossary";
 
 const transition = { ease: "linear", duration: 1, opacity: {delay: 0.5}}
 
@@ -20,11 +21,21 @@ const dataSet = {
     '/commercial_buildings': commercial,
 }
 
+export const Glossary = 'glossary'
+
 
 export const BuildingPages = ({svg, title}) => {
     const { selected, setSelected } = useContext(SelectedContext)
     const {pathname} = useRouter()
     const selectedData = dataSet[pathname][selected]
+
+    if(selected === Glossary) {
+        return (
+            <Container sx={{ py: 5 }}>
+                <GlossaryPage />
+            </Container>
+        )
+    }
 
     return (
         <Container maxWidth={'xl'} sx={{ py: 5 }}>
