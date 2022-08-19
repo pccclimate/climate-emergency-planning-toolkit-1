@@ -51,7 +51,7 @@ export const BuildingPages = ({svg, title}) => {
                         layout
                         key='header'
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1, height: 140 }}
+                        animate={{ opacity: 1, height: 160 }}
                         transition={{ ease: "easeIn", duration: 1, opacity: { duration: 0.5  }}}
                         exit={{opacity: 0, height: 0 }}
                     >
@@ -73,8 +73,8 @@ export const BuildingPages = ({svg, title}) => {
                         </motion.div>
                     )}
                     {!selectedData && (
-                        <Box sx={{ position: 'absolute', top: 20, left: '10%' }}>
-                            <Chip label={'Click on the interactive elements for more information'} variant="outlined" color="success" />
+                        <Box sx={{ position: 'absolute', top: 20, left: '10%', zIndex: 5 }}>
+                            <Chip label={'Click on the interactive elements for more information'} color="success" />
                         </Box>
                     )}
 
