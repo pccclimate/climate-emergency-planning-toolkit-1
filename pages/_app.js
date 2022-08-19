@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
       <ThemeProvider theme={responsiveFontSizes(themeOptions)}>
         <SelectedProvider>
-          <Component {...pageProps} />
+            <Component {...pageProps} />
         </SelectedProvider>
       </ThemeProvider>
   )

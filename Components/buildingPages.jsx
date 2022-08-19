@@ -1,5 +1,5 @@
 import {Box, Chip, Container, Typography} from "@mui/material";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
 import residentialData from '../data/residential.json'
 import allData from '../data/adaption.json'
@@ -10,7 +10,6 @@ import {Require} from "./require";
 import {Info} from "./info";
 import {useRouter} from "next/router";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-import {GlossaryPage} from "./Glossary";
 
 const transition = { ease: "linear", duration: 1, opacity: {delay: 0.5}}
 
@@ -29,10 +28,17 @@ export const BuildingPages = ({svg, title}) => {
     const {pathname} = useRouter()
     const selectedData = dataSet[pathname][selected]
 
+    useEffect(() => {
+        setSelected(undefined)
+        return (() => {
+            setSelected(undefined)
+        })
+    }, [pathname])
+
     if(selected === Glossary) {
         return (
-            <Container sx={{ py: 5 }}>
-                <GlossaryPage />
+            <Container maxWidth={'xl'} sx={{ py: 5 }}>
+                <Glossary />
             </Container>
         )
     }
@@ -75,9 +81,9 @@ export const BuildingPages = ({svg, title}) => {
                     <motion.div
                         key='svg'
                         layout
-                        initial={{flex: 1, maxWidth: 1100, padding: 15 }}
-                        animate={{ flex: 4, maxWidth: 1100, padding: 15 }}
-                        transition={{ ease: "linear", duration: 1, delay: 0.5 }}
+                        initial={{flex: 4, maxWidth: 1100}}
+                        animate={{ flex: 4, maxWidth: 1100 }}
+                        transition={{ ease: "linear", duration: 1}}
                     >
                         <Box sx={{ position: 'relative '}}>
                             {selectedData && (
@@ -92,7 +98,9 @@ export const BuildingPages = ({svg, title}) => {
                                         cursor: 'pointer', fontSize: 80, color: 'rgb(154, 194, 28)', stroke: 'white', strokeWidth: 0.3, transition: '0.4s', '&:hover': {color: 'rgb(35, 53, 105)'} }} />
                                 </motion.div>
                             )}
-                            {svg()}
+                            <Box>
+                                {svg()}
+                            </Box>
                         </Box>
                         {selectedData && (
                             <motion.div

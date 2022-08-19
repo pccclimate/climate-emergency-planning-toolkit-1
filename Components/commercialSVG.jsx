@@ -3,10 +3,12 @@ import {motion} from "framer-motion";
 import {SelectedContext} from "../context/selectedElementContext";
 import {useContext, useEffect, useRef, useState} from "react";
 import {commercialRef} from "../data/commercialRef";
-import {allBuildingsRefs} from "../data/allBuildingsRefs";
+import {residentialRefs} from "../data/residentialRefs";
 
 
 const SVGStyle = styled.div`
+	clip-path: inset(0% 0% 4% 0% round 58% 57% 96% 57%);
+
 	.cls-1 {
 		fill: #9c9c9c;
 	}
@@ -566,7 +568,9 @@ const SVGStyle = styled.div`
 `
 
 const zoomPadding = 15
-const initView = "120 0 1120.81 832.29"
+const originalHeight = 832.29
+const originalWidth = 1120.81
+const initView = `0 0 ${originalWidth} ${originalHeight}`
 
 export const CommercialSVG = () => {
 	const { selected, setSelected } = useContext(SelectedContext)
@@ -612,7 +616,15 @@ export const CommercialSVG = () => {
 
 	const zoomTo = (ref) => {
 		const {x, y, width, height} = ref.current.getBBox()
-		setViewBox(`${x - zoomPadding} ${y - zoomPadding} ${width + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
+		const centerPointY = y + (height / 2)
+		const newHeight = ((originalHeight / originalWidth) * width) + (zoomPadding * 2)
+		setViewBox(`${x - zoomPadding} ${(centerPointY - (newHeight / 2) - zoomPadding)} ${width + (zoomPadding * 2)} ${newHeight + (zoomPadding * 2)}`)
+		if(selected === commercialRef.demolition) {
+			const newWidth = ((originalWidth / originalHeight) * height) + (zoomPadding * 2)
+			setViewBox(`${x + 20} ${(centerPointY - (height / 2) - zoomPadding)} ${newWidth + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
+		} else {
+			setViewBox(`${x - zoomPadding} ${(centerPointY - (newHeight / 2) - zoomPadding)} ${width + (zoomPadding * 2)} ${newHeight + (zoomPadding * 2)}`)
+		}
 	}
 
 	return (
@@ -620,7 +632,7 @@ export const CommercialSVG = () => {
 			<motion.svg xmlns="http://www.w3.org/2000/svg"
 						variants={viewBoxVariants}
 						animate={selected ? 'zoomed' : 'initial'}
-						transition={{ delay: 0.2, ease: "linear", type: "tween", duration: 1 }}
+						transition={{ delay: 0.2, ease: "linear", duration: 1 }}
 			>
 				<defs>
 					<clipPath id="clippath">

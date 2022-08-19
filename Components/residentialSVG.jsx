@@ -5,6 +5,7 @@ import {SelectedContext} from "../context/selectedElementContext";
 import {residentialRefs} from "../data/residentialRefs";
 
 const SVGStyle = styled.div`
+  clip-path: inset(0% 7.27% 0.35% 0% round 83% 94% 160%);
   .cls-1{fill:#b6b19e;}
   .cls-2{fill:#939393;}
   .cls-3{fill:#8c6239;}
@@ -37,7 +38,6 @@ const SVGStyle = styled.div`
   .cls-41{fill:#9b8579;}
   .cls-42{fill:#94afbf;}
   .cls-43{fill:#ffae4a;}
-  .cls-44{clip-path:url('#clippath-all');}
   .cls-45{fill:#ba8d21;}
   .cls-46{isolation:isolate;}
   .cls-47{fill:#4d4d4d;}
@@ -142,14 +142,13 @@ const SVGStyle = styled.div`
   .cls-39{fill:#67c6e2;}
   .cls-131{fill:#ffbf70;}
   .cls-132{fill:#414042;}
-  #residential{
-    clip-path:url('#clippath-all');
-  }
   margin-bottom: 20px;
 `
 
 const zoomPadding = 15
-const initView = "0 0 1147.68874 739.88125"
+const originalHeight =  739.88125
+const originalWidth = 1147.68874
+const initView = `0 0 ${originalWidth} ${originalHeight}`
 
 
 export const ResidentialSVG = () => {
@@ -193,7 +192,14 @@ export const ResidentialSVG = () => {
 
     const zoomTo = (ref) => {
         const {x, y, width, height} = ref.current.getBBox()
-        setViewBox(`${x - zoomPadding} ${y - zoomPadding} ${width + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
+        const centerPointY = y + (height / 2)
+        const newHeight = ((originalHeight / originalWidth) * width) + (zoomPadding * 2)
+        if(selected === residentialRefs.demolition) {
+            const newWidth = ((originalWidth / originalHeight) * height) + (zoomPadding * 2)
+            setViewBox(`${x - 200} ${(centerPointY - (height / 2) - zoomPadding)} ${newWidth + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
+        } else {
+            setViewBox(`${x - zoomPadding} ${(centerPointY - (newHeight / 2) - zoomPadding)} ${width + (zoomPadding * 2)} ${newHeight + (zoomPadding * 2)}`)
+        }
     }
 
     return (
@@ -201,7 +207,8 @@ export const ResidentialSVG = () => {
             <motion.svg xmlns="http://www.w3.org/2000/svg"
                         variants={viewBoxVariants}
                         animate={selected ? 'zoomed' : 'initial'}
-                        transition={{ delay: 0.2, ease: "linear", type: "tween", duration: 1 }}
+                        preserveAspectRatio="xMinYMin meet"
+                        transition={{ delay: 0.2, ease: "linear", duration: 1 }}
             >
                 <defs>
                     <clipPath
@@ -357,10 +364,10 @@ export const ResidentialSVG = () => {
                                 <rect className="cls-40" x="686.96279" y="545.89965" width="29.54651" height="7.58943"/>
                             </g>
                         </g>
-                        <g id="Demolition" ref={demolitionRef} onClick={() => setSelected(residentialRefs.demolition)}>
-                            <g className="cls-61">
+                        <g id="Demolition"onClick={() => setSelected(residentialRefs.demolition)} ref={demolitionRef} >
+                            <g className="cls-61" >
                                 <g>
-                                    <g>
+                                    <g >
                                         <circle className="cls-132" cx="889.92176" cy="460.49245" r="43.60532"/>
                                         <path className="cls-89"
                                               d="M889.92176,488.83201c19.24668,0,35.83759-10.33137,43.48327-25.23665-1.59317,22.63268-20.4452,40.5024-43.48327,40.5024-23.03806,0-41.89011-17.8696-43.48327-40.50228,7.64567,14.90516,24.23659,25.23653,43.48327,25.23653Z"/>
