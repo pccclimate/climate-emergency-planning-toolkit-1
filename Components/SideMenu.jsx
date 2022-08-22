@@ -1,6 +1,7 @@
 import {Box, Divider, ListItemIcon, ListItemText, MenuItem, MenuList, Paper, Typography} from "@mui/material";
 import Link from 'next/link'
 import {useRouter} from "next/router";
+import {AnimatePresence, motion} from "framer-motion";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import {useContext, useState} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
@@ -8,6 +9,13 @@ import {residentialRefs} from "../data/residentialRefs";
 import {allBuildingsRefs} from "../data/allBuildingsRefs";
 import {commercialRef} from "../data/commercialRef";
 import {Glossary} from "./buildingPages";
+
+const variants = {
+    hidden: { opacity: 0, y: 0, x: -100 },
+    enter: { opacity: 1, y: 0, x: 0},
+    exit: { opacity: 0, y: 0, x: -100 },
+}
+
 
 const homeLinks = [
     {
@@ -237,12 +245,23 @@ export const SideMenu = () => {
     const [topMenu, setTopMenu] = useState(false)
 
     return (
+        <AnimatePresence >
+            <motion.div
+                layoutId={'sideBar'}
+                variants={variants}
+                initial="hidden"
+                animate="enter"
+                exit="exit"
+                transition={{ type: 'ease-in-out', duration: 0.9 }}
+            >
         <Paper>
             <Box sx={{ width: 300, minHeight: 'calc(100vh - 170px)' }}>
-                <Box sx={{ position: 'fixed', width: 300}}>
+                <Box sx={{ position: 'fixed', width: 300 }}>
                     {topMenu ? <HomeLinksComponent setTopMenu={setTopMenu} /> : <DrillDownMenu setTopMenu={setTopMenu} />}
                 </Box>
             </Box>
         </Paper>
+            </motion.div>
+        </AnimatePresence>
     )
 }

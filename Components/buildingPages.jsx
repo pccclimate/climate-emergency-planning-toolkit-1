@@ -12,7 +12,11 @@ import {useRouter} from "next/router";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
 const transition = { ease: "linear", duration: 1, opacity: {delay: 0.5}}
-
+const variants = {
+    hidden: { opacity: 0 },
+    enter: { opacity: 1},
+    exit: { opacity: 0 },
+}
 
 const dataSet = {
     '/all_buildings': allData,
@@ -44,91 +48,100 @@ export const BuildingPages = ({svg, title}) => {
     }
 
     return (
-        <Container maxWidth={'xl'} sx={{ py: 5 }}>
-            <AnimatePresence  initial={false}>
-                {!selectedData && (
+            <Container maxWidth={'xl'} sx={{ py: 5 }}>
+                <AnimatePresence>
                     <motion.div
-                        layout
-                        key='header'
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1, height: 160 }}
-                        transition={{ ease: "easeIn", duration: 1, opacity: { duration: 0.5  }}}
-                        exit={{opacity: 0, height: 0 }}
+
+                        variants={variants}
+                        initial="hidden"
+                        animate="enter"
+                        exit="exit"
+                        transition={{ type: 'ease-in-out', duration: 0.9 }}
                     >
-                        <Typography variant={'h2'} sx={{textAlign: 'center'}}>
-                            {title}
-                        </Typography>
-                </motion.div>)}
-                <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative'}}>
-                    {selectedData && (
+                    {!selectedData && (
                         <motion.div
                             layout
-                            key='title'
-                            animate={{ opacity: 1, flex: 2}}
-                            exit={{opacity: 0, flex: 1 }}
-                            transition={transition}
-                            initial={{opacity: 0, flex: 1 }}
+                            key='header'
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1, height: 160 }}
+                            transition={{ ease: "easeIn", duration: 1, opacity: { duration: 0.5  }}}
+                            exit={{opacity: 0, height: 0 }}
                         >
-                            <TitleSections item={selectedData}/>
-                        </motion.div>
-                    )}
-                    {!selectedData && (
-                        <Box sx={{ position: 'absolute', top: 20, left: '10%', zIndex: 5 }}>
-                            <Chip label={'Click on the interactive elements for more information'} color="success" />
-                        </Box>
-                    )}
-
-                    <motion.div
-                        key='svg'
-                        layout
-                        initial={{flex: 4, maxWidth: 1100}}
-                        animate={{ flex: 4, maxWidth: 1100 }}
-                        transition={{ ease: "linear", duration: 1}}
-                    >
-                        <Box sx={{ position: 'relative '}}>
-                            {selectedData && (
-                                <motion.div
-                                    style={{ position: 'absolute', top: -20, left: -20 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{opacity: 0 }}
-                                    initial={{opacity: 0 }}
-                                    transition={transition}
-                                >
-                                    <ArrowCircleLeftIcon onClick={() => {setSelected(undefined)}} sx={{
-                                        cursor: 'pointer', fontSize: 80, color: 'rgb(154, 194, 28)', stroke: 'white', strokeWidth: 0.3, transition: '0.4s', '&:hover': {color: 'rgb(35, 53, 105)'} }} />
-                                </motion.div>
-                            )}
-                            <Box>
-                                {svg()}
-                            </Box>
-                        </Box>
+                            <Typography variant={'h2'} sx={{textAlign: 'center'}}>
+                                {title}
+                            </Typography>
+                        </motion.div>)}
+                    <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative'}}>
                         {selectedData && (
                             <motion.div
-                                key='info'
-                                animate={{ opacity: 1 }}
-                                exit={{opacity: 0 }}
+                                layout
+                                key='title'
+                                animate={{ opacity: 1, flex: 2}}
+                                exit={{opacity: 0, flex: 1 }}
                                 transition={transition}
-                                initial={{opacity: 0 }}
+                                initial={{opacity: 0, flex: 1 }}
                             >
-                                <Require item={selectedData} />
+                                <TitleSections item={selectedData}/>
                             </motion.div>
                         )}
-                    </motion.div>
-                    {selectedData && (
+                        {!selectedData && (
+                            <Box sx={{ position: 'absolute', top: 20, left: '10%', zIndex: 5 }}>
+                                <Chip label={'Click on the interactive elements for more information'} color="success" />
+                            </Box>
+                        )}
+
                         <motion.div
+                            key='svg'
                             layout
-                            key='info'
-                            animate={{ opacity: 1, flex: 2  }}
-                            exit={{opacity: 0, flex: 1 }}
-                            transition={transition}
-                            initial={{opacity: 0, flex: 1 }}
+                            initial={{flex: 4, maxWidth: 1100}}
+                            animate={{ flex: 4, maxWidth: 1100 }}
+                            transition={{ ease: "linear", duration: 1}}
                         >
-                            <Info item={selectedData} />
+                            <Box sx={{ position: 'relative '}}>
+                                {selectedData && (
+                                    <motion.div
+                                        style={{ position: 'absolute', top: -20, left: -20 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{opacity: 0 }}
+                                        initial={{opacity: 0 }}
+                                        transition={transition}
+                                    >
+                                        <ArrowCircleLeftIcon onClick={() => {setSelected(undefined)}} sx={{
+                                            cursor: 'pointer', fontSize: 80, color: 'rgb(154, 194, 28)', stroke: 'white', strokeWidth: 0.3, transition: '0.4s', '&:hover': {color: 'rgb(35, 53, 105)'} }} />
+                                    </motion.div>
+                                )}
+                                <Box>
+                                    {svg()}
+                                </Box>
+                            </Box>
+                            {selectedData && (
+                                <motion.div
+                                    key='info'
+                                    animate={{ opacity: 1 }}
+                                    exit={{opacity: 0 }}
+                                    transition={transition}
+                                    initial={{opacity: 0 }}
+                                >
+                                    <Require item={selectedData} />
+                                </motion.div>
+                            )}
                         </motion.div>
-                    )}
-                </Box>
-            </AnimatePresence>
-        </Container>
+                        {selectedData && (
+                            <motion.div
+                                layout
+                                key='info'
+                                animate={{ opacity: 1, flex: 2  }}
+                                exit={{opacity: 0, flex: 1 }}
+                                transition={transition}
+                                initial={{opacity: 0, flex: 1 }}
+                            >
+                                <Info item={selectedData} />
+                            </motion.div>
+                        )}
+                    </Box>
+                    </motion.div>
+                </AnimatePresence>
+            </Container>
     )
 }
 

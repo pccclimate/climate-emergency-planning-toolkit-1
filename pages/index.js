@@ -5,6 +5,7 @@ import residential from '../assets/residential.svg'
 import commercial from '../assets/commercial.svg'
 import SVG from "react-inlinesvg";
 import Link from 'next/link'
+import {AnimatePresence, motion} from "framer-motion";
 
 const links = [
     {
@@ -27,9 +28,19 @@ const links = [
     }
 ]
 
+const variants = {
+    hidden: { opacity: 0 },
+    enter: { opacity: 1},
+    exit: { opacity: 0 },
+}
+
 const Style = {
     p: 5,
     flex: 1,
+    'svg': {
+        filter: 'drop-shadow(3px 4px 4px rgba(0,0,0,0.2))',
+        transition: '0.4s'
+    },
     '.clippedArea': {
         transition: '0.4s',
         transformOrigin: 'center'
@@ -38,7 +49,10 @@ const Style = {
         cursor: 'pointer',
         '.clippedArea': {
             transform: 'scale(1.1)'
-        }
+        },
+        'svg': {
+            filter: 'drop-shadow(3px 4px 8px rgba(0,0,0,0.5))'
+        },
     }
 }
 
@@ -46,6 +60,15 @@ export default function Home() {
   return (
     <Layout>
         <Container>
+            <AnimatePresence>
+                <motion.div
+
+                    variants={variants}
+                    initial="hidden"
+                    animate="enter"
+                    exit="exit"
+                    transition={{ type: 'ease-in-out', duration: 1.2 }}
+                >
             <Box sx={{ px: 2, py: 8 }}>
                 <Typography textAlign='center' mb={2}>
                     This toolkit has been developed for applicants to understand what is required to ensure new development meets the expectations of the Plymouth and South West Devon Climate Emergency Planning Statement (adopted September 2022).
@@ -74,6 +97,8 @@ export default function Home() {
                     </Link>
                 ))}
             </Box>
+                </motion.div>
+            </AnimatePresence>
         </Container>
     </Layout>
   )
