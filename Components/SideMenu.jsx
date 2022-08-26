@@ -1,14 +1,25 @@
-import {Box, Divider, ListItemIcon, ListItemText, MenuItem, MenuList, Paper, Typography} from "@mui/material";
+import {
+    Box,
+    Divider, Drawer,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    MenuList,
+    Paper,
+    Typography,
+    useMediaQuery
+} from "@mui/material";
 import Link from 'next/link'
 import {useRouter} from "next/router";
 import {AnimatePresence, motion} from "framer-motion";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
 import {residentialRefs} from "../data/residentialRefs";
 import {allBuildingsRefs} from "../data/allBuildingsRefs";
 import {commercialRef} from "../data/commercialRef";
 import {Glossary} from "./buildingPages";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const variants = {
     hidden: { opacity: 0, y: 0, x: -100 },
@@ -242,17 +253,47 @@ const DrillDownMenu = ({setTopMenu}) => {
     )
 }
 export const SideMenu = () => {
-    const [topMenu, setTopMenu] = useState(false)
+    const [drawerOpen, setDrawerOpen] = useState(false)
+    const { selected } = useContext(SelectedContext)
+    const matches = useMediaQuery('(max-width:900px)');
+
+    useEffect(() => {
+        setDrawerOpen(false)
+    }, [selected])
+
+    if(matches) {
+        return (
+            <div>
+                <Box sx={{ position: 'absolute', background: 'rgb(23, 59, 102)', borderRadius: '50%', p: 1, m: 1, color: 'white', cursor: 'pointer', mt: 1 }} onClick ={() => setDrawerOpen(!drawerOpen)}>
+                    <MenuIcon sx={{ width: 30 }} />
+                </Box>
+                <Drawer
+                    anchor={'left'}
+                    open={drawerOpen}
+                    onClose={() => setDrawerOpen(false)}
+                >
+                    <MenuSideBar />
+                </Drawer>
+            </div>
+        )
+    }
 
     return (
         <div>
             <Paper style={{ height: '100%'}}>
-                <Box sx={{ width: 250, minHeight: 'calc(100vh - 170px)' }}>
-                    <Box sx={{ width: 250 }}>
-                        {topMenu ? <HomeLinksComponent setTopMenu={setTopMenu} /> : <DrillDownMenu setTopMenu={setTopMenu} />}
-                    </Box>
-                </Box>
+                <MenuSideBar />
             </Paper>
         </div>
+    )
+}
+
+const MenuSideBar = () => {
+    const [topMenu, setTopMenu] = useState(false)
+    return (
+        <Box sx={{ width: 250, minHeight: 'calc(100vh - 170px)' }}>
+            <Box sx={{ width: 250 }}>
+                {topMenu ? <HomeLinksComponent setTopMenu={setTopMenu} /> : <DrillDownMenu setTopMenu={setTopMenu} />}
+            </Box>
+        </Box>
     )
 }

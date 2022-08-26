@@ -4,22 +4,24 @@ import {InnerExpansion} from "./innerExpansion";
 
 export const Require = ({item}) => {
     return (
-        <Accordion>
-            <AccordionSummary
-                expandIcon={<ExpandMoreIcon/>}
-                aria-controls="require"
-                id="require"
-            >
-                <Typography sx={{fontWeight: 'bold '}}>What we Require</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-                {item.require.map((text, i) => (
-                    <Typography key={i} sx={{pb: 1}}>
-                        {text}
-                    </Typography>
-                ))}
-                {item.requireExpansions?.map((props, i) => <InnerExpansion {...props} key={i}/>)}
-            </AccordionDetails>
-        </Accordion>
+        <Box sx={{ p: 2 }}>
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon/>}
+                    aria-controls="require"
+                    id="require"
+                >
+                    <Typography sx={{fontWeight: 'bold '}}>What we Require</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    {item.require.map((text, i) => (
+                        <Typography key={i} sx={{pb: 1}}>
+                            {text}
+                        </Typography>
+                    ))}
+                    {item.requireExpansions?.map((props, i) => <InnerExpansion {...props} key={i}/>)}
+                </AccordionDetails>
+            </Accordion>
+        </Box>
     )
 }

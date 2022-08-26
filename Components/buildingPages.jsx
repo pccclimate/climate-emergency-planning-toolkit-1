@@ -1,4 +1,4 @@
-import {Box, Chip, Container, Typography} from "@mui/material";
+import {Box, Chip, Container, Typography, useMediaQuery} from "@mui/material";
 import {useContext, useEffect} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
 import residentialData from '../data/residential.json'
@@ -29,6 +29,7 @@ export const Glossary = 'glossary'
 
 
 export const BuildingPages = ({svg, title}) => {
+    const matches = useMediaQuery('(max-width:1200px)');
     const { selected, setSelected } = useContext(SelectedContext)
     const {pathname} = useRouter()
     const selectedData = dataSet[pathname][selected]
@@ -56,22 +57,22 @@ export const BuildingPages = ({svg, title}) => {
                         initial="hidden"
                         animate="enter"
                         exit="exit"
-                        transition={{ type: 'ease-in-out', duration: 0.9 }}
+                        transition={{ type: 'ease-in-out', duration: 0.9, delay: 1 }}
                     >
                     {!selectedData && (
                         <motion.div
                             layout
                             key='header'
                             initial={{ opacity: 0 }}
-                            animate={{ opacity: 1, height: 160 }}
-                            transition={{ ease: "easeIn", duration: 1, opacity: { duration: 0.5  }}}
-                            exit={{opacity: 0, height: 0 }}
+                            animate={{ opacity: 1}}
+                            transition={{ ease: "easeIn", duration: 0.5, delay: 1}}
+                            exit={{opacity: 0}}
                         >
-                            <Typography variant={'h2'} sx={{textAlign: 'center'}}>
+                            <Typography variant={'h3'} sx={{textAlign: 'center', mt: 1, zIndex: 10, position: 'relative', mb: 2}}>
                                 {title}
                             </Typography>
                         </motion.div>)}
-                    <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative'}}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', flexDirection: matches ? 'column' : 'row'}}>
                         <motion.div
                             layout
                             key='title'
@@ -91,8 +92,8 @@ export const BuildingPages = ({svg, title}) => {
                             )}
                         </motion.div>
                         {!selectedData && (
-                            <Box sx={{ position: 'absolute', top: 20, left: '10%', zIndex: 5 }}>
-                                <Chip label={'Click on the interactive elements for more information'} color="success" />
+                            <Box sx={{ position: 'absolute', top: 20, left: matches ? 0 : '10%', zIndex: 5, whiteSpace: 'normal', maxWidth: '100%' }}>
+                                <Chip label={'Click on the interactive elements for more information'} color="success" size={'small'} />
                             </Box>
                         )}
                         <motion.div
@@ -105,7 +106,7 @@ export const BuildingPages = ({svg, title}) => {
                             <Box sx={{ position: 'relative', m: 'auto', maxWidth: 900 }}>
                                 {selectedData && (
                                     <motion.div
-                                        style={{ position: 'absolute', top: -20, left: -20 }}
+                                        style={{ position: 'absolute', top: -20, left: -20, zIndex: 10 }}
                                         animate={{ opacity: 1 }}
                                         exit={{opacity: 0 }}
                                         initial={{opacity: 0 }}

@@ -37,6 +37,7 @@ const variants = {
 const Style = {
     p: 5,
     flex: 1,
+    minWidth: 330,
     'svg': {
         filter: 'drop-shadow(3px 4px 4px rgba(0,0,0,0.2))',
         transition: '0.4s'
@@ -81,16 +82,16 @@ export default function Home() {
                     To view the requirements, please click on the images below for the relevant development type.
                 </Typography>
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
                 {links.map(({title, text, img, link}) => (
                     <Link href={link} key={title}>
                         <Box sx={Style}>
                             <Typography sx={{ mb: 4, textAlign: 'center' }} variant={'h5'}>{title}</Typography>
-                            <Box sx={{ width: '100%', m: 'auto'}}>
+                            <Box sx={{ width: '100%', m: 'auto', maxWidth: 330}}>
                                 <SVG
                                     src={img.src}
                                     title={title}
-                                    height={'310px'}
+                                    width={'100%'}
                                 />
                             </Box>
                             <Typography sx={{ mt: 4, textAlign: 'center' }}>{text}</Typography>
