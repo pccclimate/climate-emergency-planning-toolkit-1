@@ -364,7 +364,7 @@ export const ResidentialSVG = () => {
                                 <rect className="cls-40" x="686.96279" y="545.89965" width="29.54651" height="7.58943"/>
                             </g>
                         </g>
-                        <g id="Demolition"onClick={() => setSelected(residentialRefs.demolition)} ref={demolitionRef} >
+                        <g className={`${ selected ? '' : 'clickable'}`} id="Demolition"onClick={() => setSelected(residentialRefs.demolition)} ref={demolitionRef} >
                             <g className="cls-61" >
                                 <g>
                                     <g >
@@ -473,7 +473,7 @@ export const ResidentialSVG = () => {
                             </g>
                             <polygon className="cls-60"
                                      points="402.27243 375.32301 333.91936 375.32301 359.93706 294.97391 419.92488 295.18281 402.27243 375.32301"/>
-                            <g ref={renewableEnergyRef}>
+                            <g ref={renewableEnergyRef} className={`${ selected ? '' : 'clickable'}`}>
                                 <g>
                                     <polygon className="cls-28"
                                              points="399.29581 373.23034 330.94275 373.23034 356.96045 292.88125 416.94827 293.09014 399.29581 373.23034"/>
@@ -502,7 +502,7 @@ export const ResidentialSVG = () => {
                                 </g>
                             </g>
                         </g>
-                        <g id="Air_Source_Heat_Pump" ref={heatingRef} onClick={() => setSelected(residentialRefs.heatingSystems)}>
+                        <g className={`${ selected ? '' : 'clickable'}`}  id="Air_Source_Heat_Pump" ref={heatingRef} onClick={() => setSelected(residentialRefs.heatingSystems)}>
                             <g>
                                 <path className="cls-73"
                                       d="M761.78109,547.50033c0,8.70634-7.05945,15.76458-15.76699,15.76458s-15.76566-7.05824-15.76566-15.76458c0-8.70754,7.05812-15.76687,15.76566-15.76687s15.76699,7.05933,15.76699,15.76687Z"/>
@@ -542,7 +542,7 @@ export const ResidentialSVG = () => {
                                       d="M757.38247,562.35237h-22.79566c-1.88857,0-3.42355-1.53606-3.42355-3.42355v-22.78745c0-1.88736,1.53498-3.42355,3.42355-3.42355h22.79566c1.88749,0,3.42367,1.53618,3.42367,3.42355v22.78745c0,1.88749-1.53618,3.42355-3.42367,3.42355Zm-22.79566-29.0121c-1.54439,0-2.80111,1.25792-2.80111,2.80111v22.78745c0,1.54439,1.25671,2.80111,2.80111,2.80111h22.79566c1.54439,0,2.80111-1.25671,2.80111-2.80111v-22.78745c0-1.54319-1.25671-2.80111-2.80111-2.80111h-22.79566Z"/>
                             </g>
                         </g>
-                        <g id="EVCP" ref={vehicleRef} onClick={() => setSelected(residentialRefs.electricVehicles)}>
+                        <g id="EVCP" ref={vehicleRef} onClick={() => setSelected(residentialRefs.electricVehicles)} className={`${ selected ? '' : 'clickable'}`}>
                             <g>
                                 <path className="cls-30"
                                       d="M286.40713,508.17626l12.9224-10.08776c4.45062-3.47434,5.24028-9.92598,1.76135-14.38248l-10.58219-13.55576c-2.84026-3.63836-2.19568-8.90582,1.43788-11.74232l6.17616-4.82137-1.15813-1.48356-6.17616,4.82137c-4.45062,3.47434-5.24018,9.92611-1.76135,14.38248l10.58219,13.55576c2.84026,3.63836,2.19578,8.90594-1.43778,11.74245l-12.9224,10.08776,1.15803,1.48343Z"/>
@@ -607,7 +607,7 @@ export const ResidentialSVG = () => {
                             <path className="cls-89"
                                   d="M295.44225,550.66752v.08021c0,2.1928-1.14978,3.97055-2.56812,3.97055h-117.77555c-2.77068,0-5.01703-1.792-5.01703-4.01066,0-1.10933,.56297-2.10773,1.46813-2.83306,.91068-.72533,2.16356-1.1776,3.5489-1.1776h117.77555c1.41834,0,2.56812,1.77766,2.56812,3.97055Z"/>
                         </g>
-                        <g id="Local_Materials" ref={buildingRef} onClick={() => setSelected(residentialRefs.buildingMaterial)}>
+                        <g id="Local_Materials" ref={buildingRef} onClick={() => setSelected(residentialRefs.buildingMaterial)} className={`${ selected ? '' : 'clickable'}`}>
                             <g id="P297LW">
                                 <path className="cls-16"
                                       d="M560.31298,519.79787c1.17554,3.59829,7.58221,9.81809,8.46767,10.43828,0,0,1.49062-2.48433,1.19246-3.87567-.24344-1.13575-2.73772-5.18428-3.59142-7.17379-.04469-.10337-.08443-.2017-.1192-.29312-.11727-.30512-.17888-.5416-.16499-.68174,.04275-.43227,1.40115-1.48364,2.98029-2.73082,2.05208-1.62177,4.47682-3.57249,4.87035-4.92102,.69557-2.38493,3.10541-11.82848,3.10541-11.82848,0,0-5.98731,1.29477-7.67666,2.78544-1.68937,1.49062-8.94371,13.91239-9.24185,17.09236-.03276,.34681,.03282,.74832,.17794,1.18856Z"/>
@@ -924,7 +924,7 @@ export const ResidentialSVG = () => {
                                      points="787.10611 221.98475 711.05138 221.98475 711.05138 145.93002 767.79062 145.93002 787.10611 221.98475"/>
                             <polygon className="cls-60"
                                      points="812.45768 236.47136 711.05138 236.47136 711.05138 221.98475 787.10611 221.98475 812.45768 236.47136"/>
-                            <g>
+                            <g  className={`${ selected ? '' : 'clickable'}`}>
                                 <g>
                                     <g>
                                         <path className="cls-20"
@@ -1016,7 +1016,7 @@ export const ResidentialSVG = () => {
                                 </g>
                             </g>
                         </g>
-                        <g id="Travel" ref={activeTravelRef} onClick={() => setSelected(residentialRefs.activeTravel)}>
+                        <g id="Travel" ref={activeTravelRef} onClick={() => setSelected(residentialRefs.activeTravel)} className={`${ selected ? '' : 'clickable'}`}>
                             <g className="cls-44">
                                 <g>
                                     <g>

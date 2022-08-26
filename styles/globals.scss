@@ -17,6 +17,12 @@ a {
   cursor: pointer;
   transition: 0.5s;
   &:hover {
-    filter: drop-shadow(3px 5px 2px rgb(255 255 255 / 1));
+    filter: drop-shadow(0px 0px 16px rgb(255 255 255 / 1));
+  }
+}
+.clickableGroup {
+  cursor: pointer;
+  &:hover .clickable {
+    filter: drop-shadow(0px 0px 16px rgb(255 255 255 / 1));
   }
 }

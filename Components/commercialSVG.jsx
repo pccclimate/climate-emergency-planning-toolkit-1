@@ -3,8 +3,6 @@ import {motion} from "framer-motion";
 import {SelectedContext} from "../context/selectedElementContext";
 import {useContext, useEffect, useRef, useState} from "react";
 import {commercialRef} from "../data/commercialRef";
-import {residentialRefs} from "../data/residentialRefs";
-
 
 const SVGStyle = styled.div`
 	clip-path: inset(0% 0% 4% 0% round 58% 57% 96% 57%);
@@ -711,7 +709,7 @@ export const CommercialSVG = () => {
 					<rect className="cls-107" x="992.68" y="328.39" width="15.44" height="23.17"/>
 				</g>
 				<g id="Demolition"
-				   className={'clickable'}
+				   className={`${ selected ? '' : 'clickable'}`}
 				   onClick={() => setSelected(commercialRef.demolition)}
 				   ref={demoRef}>
 					<g className="cls-58">
@@ -767,7 +765,7 @@ export const CommercialSVG = () => {
 				>
 					<g
 						ref={renewableRef}
-						className={'clickable'}
+						className={`${ selected ? '' : 'clickable'}`}
 						onClick={() => setSelected(commercialRef.renewableEnergy)}>
 						<g>
 						<g>
@@ -852,7 +850,7 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="Air_Source_Heat_Pump" ref={heatingRef} data-name="Air Source Heat Pump"
-				   className={'clickable'}
+				   className={`${ selected ? '' : 'clickable'}`}
 				   onClick={() => setSelected(commercialRef.heatingSystems)}
 				>
 					<g>
@@ -877,7 +875,7 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="EVCP" ref={electricRef}
-				   className={'clickable'}
+				   className={`${ selected ? '' : 'clickable'}`}
 				   onClick={() => setSelected(commercialRef.electricVehicles)}
 				>
 					<g>
@@ -931,7 +929,7 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="Local_Materials" ref={buildingRef} data-name="Local Materials"
-				   className={'clickable'}
+				   className={`${ selected ? '' : 'clickable'}`}
 				   onClick={() => setSelected(commercialRef.buildingMaterial)}
 				>
 					<g>
@@ -1133,13 +1131,12 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="Roof_Battery" ref={energyRef} data-name="Roof Battery"
-				   className={'clickable'}
 				   onClick={() => setSelected(commercialRef.energyStorage)}
 				>
 					<rect className="cls-103" x="413.09" y="334.46" width="59.17" height="68.83"/>
 					<rect className="cls-129" x="413.09" y="334.46" width="14.49" height="68.83"/>
 					<polygon className="cls-93" points="413.09 403.29 472.25 403.29 472.25 388.8 426.82 388.8 413.09 403.29"/>
-					<g>
+					<g className={`${ selected ? '' : 'clickable'}`}>
 						<g>
 							<g>
 								<path className="cls-60" d="M457.32,364.52c0,.22-.14,.4-.3,.4h-22.12c-.17,0-.3-.18-.3-.4v-2.01c0-.22,.14-.4,.3-.4h22.12c.17,0,.3,.18,.3,.4v2.01Z"/>
@@ -1200,7 +1197,7 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="Sustainable_Travel" ref={activeTravelRef} data-name="Sustainable Travel"
-				   className={'clickable'}
+				   className={`${ selected ? '' : 'clickable'}`}
 				   onClick={() => setSelected(commercialRef.activeTravel)}
 				>
 					<g className="cls-41">

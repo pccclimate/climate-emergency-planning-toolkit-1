@@ -42,13 +42,14 @@ const Style = {
         transition: '0.4s'
     },
     '.clippedArea': {
+        willChange: 'transform',
         transition: '0.4s',
         transformOrigin: 'center'
     },
     ':hover': {
         cursor: 'pointer',
         '.clippedArea': {
-            transform: 'scale(1.1)'
+            transform: 'scale(1.1) translateZ(0)'
         },
         'svg': {
             filter: 'drop-shadow(3px 4px 8px rgba(0,0,0,0.5))'

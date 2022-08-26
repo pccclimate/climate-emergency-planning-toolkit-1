@@ -51,7 +51,6 @@ export const BuildingPages = ({svg, title}) => {
             <Container maxWidth={'xl'} sx={{ py: 5 }}>
                 <AnimatePresence>
                     <motion.div
-
                         variants={variants}
                         initial="hidden"
                         animate="enter"
@@ -97,7 +96,7 @@ export const BuildingPages = ({svg, title}) => {
                             animate={{ flex: 4, maxWidth: 1100 }}
                             transition={{ ease: "linear", duration: 1}}
                         >
-                            <Box sx={{ position: 'relative '}}>
+                            <Box sx={{ position: 'relative', m: 'auto', maxWidth: 900 }}>
                                 {selectedData && (
                                     <motion.div
                                         style={{ position: 'absolute', top: -20, left: -20 }}

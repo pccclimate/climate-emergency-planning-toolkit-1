@@ -225,7 +225,7 @@ const DrillDownMenu = ({setTopMenu}) => {
                     <Box sx={{ pb: 2 }}>
                         {title && <Typography sx={{fontWeight: 'bold', pl: 2, pt: 2, pb: 1}}>{title}</Typography>}
                         {links.map(({title, ref}, i) => (
-                            <MenuItem key={i} onClick={() => setSelected(ref)} sx={{ pl: title ? 4 : 2 }} selected={ref === selected}>
+                            <MenuItem key={i} onClick={() => setSelected(ref)} sx={{ pl: title ? 4 : 2 }} selected={ref === selected} style={{whiteSpace: 'normal'}}>
                                 <ListItemText>{title}</ListItemText>
                             </MenuItem>
                         ))}
@@ -245,23 +245,14 @@ export const SideMenu = () => {
     const [topMenu, setTopMenu] = useState(false)
 
     return (
-        <AnimatePresence >
-            <motion.div
-                layoutId={'sideBar'}
-                variants={variants}
-                initial="hidden"
-                animate="enter"
-                exit="exit"
-                transition={{ type: 'ease-in-out', duration: 0.9 }}
-            >
-        <Paper>
-            <Box sx={{ width: 300, minHeight: 'calc(100vh - 170px)' }}>
-                <Box sx={{ position: 'fixed', width: 300 }}>
-                    {topMenu ? <HomeLinksComponent setTopMenu={setTopMenu} /> : <DrillDownMenu setTopMenu={setTopMenu} />}
+        <div>
+            <Paper style={{ height: '100%'}}>
+                <Box sx={{ width: 250, minHeight: 'calc(100vh - 170px)' }}>
+                    <Box sx={{ width: 250 }}>
+                        {topMenu ? <HomeLinksComponent setTopMenu={setTopMenu} /> : <DrillDownMenu setTopMenu={setTopMenu} />}
+                    </Box>
                 </Box>
-            </Box>
-        </Paper>
-            </motion.div>
-        </AnimatePresence>
+            </Paper>
+        </div>
     )
 }
