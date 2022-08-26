@@ -12,6 +12,7 @@ import {useRouter} from "next/router";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
 const transition = { ease: "linear", duration: 1, opacity: {delay: 0.5}}
+const transition2 = { ease: "linear", duration: 1, opacity: {delay: 1.5}}
 const variants = {
     hidden: { opacity: 0 },
     enter: { opacity: 1},
@@ -71,24 +72,29 @@ export const BuildingPages = ({svg, title}) => {
                             </Typography>
                         </motion.div>)}
                     <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative'}}>
-                        {selectedData && (
-                            <motion.div
-                                layout
-                                key='title'
-                                animate={{ opacity: 1, flex: 2}}
-                                exit={{opacity: 0, flex: 1 }}
-                                transition={transition}
-                                initial={{opacity: 0, flex: 1 }}
-                            >
-                                <TitleSections item={selectedData}/>
-                            </motion.div>
-                        )}
+                        <motion.div
+                            layout
+                            key='title'
+                            animate={{ opacity: 1, flex: selectedData ? 2 : 1 }}
+                            transition={transition}
+                            initial={{opacity: 0, flex: 1 }}
+                        >
+                            {selectedData && (
+                                <motion.div
+                                    animate={{opacity: 1}}
+                                    exit={{opacity: 0}}
+                                    transition={transition2}
+                                    initial={{ opacity: 0}}
+                                >
+                                    <TitleSections item={selectedData}/>
+                                </motion.div>
+                            )}
+                        </motion.div>
                         {!selectedData && (
                             <Box sx={{ position: 'absolute', top: 20, left: '10%', zIndex: 5 }}>
                                 <Chip label={'Click on the interactive elements for more information'} color="success" />
                             </Box>
                         )}
-
                         <motion.div
                             key='svg'
                             layout
@@ -125,18 +131,36 @@ export const BuildingPages = ({svg, title}) => {
                                 </motion.div>
                             )}
                         </motion.div>
-                        {selectedData && (
-                            <motion.div
-                                layout
-                                key='info'
-                                animate={{ opacity: 1, flex: 2  }}
-                                exit={{opacity: 0, flex: 1 }}
-                                transition={transition}
-                                initial={{opacity: 0, flex: 1 }}
-                            >
-                                <Info item={selectedData} />
-                            </motion.div>
-                        )}
+                        <motion.div
+                            layout
+                            key='info'
+                            animate={{ opacity: 1, flex: selectedData ? 2 : 1 }}
+                            transition={transition}
+                            initial={{opacity: 0, flex: 1 }}
+                        >
+                            {selectedData && (
+                                <motion.div
+                                    animate={{opacity: 1}}
+                                    exit={{opacity: 0}}
+                                    transition={transition2}
+                                    initial={{ opacity: 0}}
+                                >
+                                    <Info item={selectedData} />
+                                </motion.div>
+                            )}
+                        </motion.div>
+                        {/*{selectedData && (*/}
+                        {/*    <motion.div*/}
+                        {/*        layout*/}
+                        {/*        key='info'*/}
+                        {/*        animate={{ opacity: 1, flex: 2  }}*/}
+                        {/*        exit={{opacity: 0, flex: 1 }}*/}
+                        {/*        transition={transition}*/}
+                        {/*        initial={{opacity: 0, flex: 1 }}*/}
+                        {/*    >*/}
+                        {/*        <Info item={selectedData} />*/}
+                        {/*    </motion.div>*/}
+                        {/*)}*/}
                     </Box>
                     </motion.div>
                 </AnimatePresence>
