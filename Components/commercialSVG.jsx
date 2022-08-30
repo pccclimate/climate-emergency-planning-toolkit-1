@@ -567,8 +567,8 @@ const SVGStyle = styled.div`
 
 const zoomPadding = 15
 const originalHeight = 832.29
-const originalWidth = 1120.81
-const initView = `0 0 ${originalWidth} ${originalHeight}`
+const originalWidth = 1080
+const initView = `150 0 ${originalWidth} ${originalHeight}`
 
 export const CommercialSVG = () => {
 	const { selected, setSelected } = useContext(SelectedContext)
@@ -602,7 +602,7 @@ export const CommercialSVG = () => {
 			zoomTo(electricRef)
 		}
 		if(selected === commercialRef.activeTravel) {
-			zoomTo(activeTravelRef)
+			zoomTo(activeTravelRef, 10, -30)
 		}
 
 	}, [selected])
@@ -612,16 +612,15 @@ export const CommercialSVG = () => {
 		zoomed: { viewBox: viewBox },
 	}
 
-	const zoomTo = (ref) => {
+	const zoomTo = (ref, padding = zoomPadding, yAdjustment = 0) => {
 		const {x, y, width, height} = ref.current.getBBox()
-		const centerPointY = y + (height / 2)
-		const newHeight = ((originalHeight / originalWidth) * width) + (zoomPadding * 2)
-		setViewBox(`${x - zoomPadding} ${(centerPointY - (newHeight / 2) - zoomPadding)} ${width + (zoomPadding * 2)} ${newHeight + (zoomPadding * 2)}`)
+		const centerPointY = y + (height / 2) - yAdjustment
+		const newHeight = ((originalHeight / originalWidth) * width) + (padding * 2)
 		if(selected === commercialRef.demolition) {
 			const newWidth = ((originalWidth / originalHeight) * height) + (zoomPadding * 2)
 			setViewBox(`${x + 20} ${(centerPointY - (height / 2) - zoomPadding)} ${newWidth + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
 		} else {
-			setViewBox(`${x - zoomPadding} ${(centerPointY - (newHeight / 2) - zoomPadding)} ${width + (zoomPadding * 2)} ${newHeight + (zoomPadding * 2)}`)
+			setViewBox(`${x - padding} ${(centerPointY - (newHeight / 2) - padding)} ${width + (padding * 2)} ${newHeight + (padding * 2)}`)
 		}
 	}
 
@@ -765,7 +764,7 @@ export const CommercialSVG = () => {
 				>
 					<g
 						ref={renewableRef}
-						className={`${ selected ? '' : 'clickable'}`}
+						className={`megaGlow ${ selected ? '' : 'clickable'}`}
 						onClick={() => setSelected(commercialRef.renewableEnergy)}>
 						<g>
 						<g>

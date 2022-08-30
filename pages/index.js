@@ -22,7 +22,7 @@ const links = [
     },
     {
         title: 'Commercial Buildings',
-        text: 'Guidance for, extensions & new commercial development',
+        text: 'Guidance for extensions & new commercial development',
         img: commercial,
         link: './commercial_buildings'
     }
@@ -74,7 +74,7 @@ export default function Home() {
                     To view the requirements, please click on the images below for the relevant development type.
                 </Typography>
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap'}}>
                 {links.map(({title, text, img, link}) => (
                     <Link href={link} key={title}>
                         <Box sx={Style}>

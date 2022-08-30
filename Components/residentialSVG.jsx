@@ -176,7 +176,7 @@ export const ResidentialSVG = () => {
         }  else if(selected === residentialRefs.electricVehicles) {
             zoomTo(vehicleRef)
         }  else if(selected === residentialRefs.activeTravel) {
-            zoomTo(activeTravelRef)
+            zoomTo(activeTravelRef, 20, -30)
         }  else if(selected === residentialRefs.heatingSystems) {
             zoomTo(heatingRef)
         } else {
@@ -190,15 +190,15 @@ export const ResidentialSVG = () => {
     }
 
 
-    const zoomTo = (ref) => {
+    const zoomTo = (ref, padding = zoomPadding, yAdjustment = 0) => {
         const {x, y, width, height} = ref.current.getBBox()
-        const centerPointY = y + (height / 2)
-        const newHeight = ((originalHeight / originalWidth) * width) + (zoomPadding * 2)
+        const centerPointY = y + (height / 2) - yAdjustment
+        const newHeight = ((originalHeight / originalWidth) * width) + (padding * 2)
         if(selected === residentialRefs.demolition) {
             const newWidth = ((originalWidth / originalHeight) * height) + (zoomPadding * 2)
             setViewBox(`${x - 200} ${(centerPointY - (height / 2) - zoomPadding)} ${newWidth + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
         } else {
-            setViewBox(`${x - zoomPadding} ${(centerPointY - (newHeight / 2) - zoomPadding)} ${width + (zoomPadding * 2)} ${newHeight + (zoomPadding * 2)}`)
+            setViewBox(`${x - padding} ${(centerPointY - (newHeight / 2) - padding)} ${width + (padding * 2)} ${newHeight + (padding * 2)}`)
         }
     }
 
@@ -542,7 +542,7 @@ export const ResidentialSVG = () => {
                                       d="M757.38247,562.35237h-22.79566c-1.88857,0-3.42355-1.53606-3.42355-3.42355v-22.78745c0-1.88736,1.53498-3.42355,3.42355-3.42355h22.79566c1.88749,0,3.42367,1.53618,3.42367,3.42355v22.78745c0,1.88749-1.53618,3.42355-3.42367,3.42355Zm-22.79566-29.0121c-1.54439,0-2.80111,1.25792-2.80111,2.80111v22.78745c0,1.54439,1.25671,2.80111,2.80111,2.80111h22.79566c1.54439,0,2.80111-1.25671,2.80111-2.80111v-22.78745c0-1.54319-1.25671-2.80111-2.80111-2.80111h-22.79566Z"/>
                             </g>
                         </g>
-                        <g id="EVCP" ref={vehicleRef} onClick={() => setSelected(residentialRefs.electricVehicles)} className={`${ selected ? '' : 'clickable'}`}>
+                        <g id="EVCP" ref={vehicleRef} onClick={() => setSelected(residentialRefs.electricVehicles)} className={`megaGlow ${ selected ? '' : 'clickable'}`}>
                             <g>
                                 <path className="cls-30"
                                       d="M286.40713,508.17626l12.9224-10.08776c4.45062-3.47434,5.24028-9.92598,1.76135-14.38248l-10.58219-13.55576c-2.84026-3.63836-2.19568-8.90582,1.43788-11.74232l6.17616-4.82137-1.15813-1.48356-6.17616,4.82137c-4.45062,3.47434-5.24018,9.92611-1.76135,14.38248l10.58219,13.55576c2.84026,3.63836,2.19578,8.90594-1.43778,11.74245l-12.9224,10.08776,1.15803,1.48343Z"/>
@@ -1016,7 +1016,7 @@ export const ResidentialSVG = () => {
                                 </g>
                             </g>
                         </g>
-                        <g id="Travel" ref={activeTravelRef} onClick={() => setSelected(residentialRefs.activeTravel)} className={`${ selected ? '' : 'clickable'}`}>
+                        <g id="Travel" ref={activeTravelRef} onClick={() => setSelected(residentialRefs.activeTravel)} className={`megaGlow ${ selected ? '' : 'clickable'}`}>
                             <g className="cls-44">
                                 <g>
                                     <g>

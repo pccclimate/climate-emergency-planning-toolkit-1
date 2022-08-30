@@ -35,13 +35,13 @@ export const AllSVG = () => {
             zoomTo(bioRef)
         }
         if(selected === allBuildingsRefs.tree){
-            zoomTo(treeRef)
+            zoomTo(treeRef, 35, -10)
         }
         if(selected === allBuildingsRefs.soil){
             zoomTo(soilRef)
         }
         if(selected === allBuildingsRefs.solar){
-            zoomTo(solarRef)
+            zoomTo(solarRef, 50, -40)
         }
         if(selected === allBuildingsRefs.green){
             zoomTo(greenRef)
@@ -51,11 +51,11 @@ export const AllSVG = () => {
         }
     }, [selected])
 
-    const zoomTo = (ref) => {
+    const zoomTo = (ref, padding= zoomPadding, yAdjustment = 0) => {
         const {x, y, width, height} = ref.current.getBBox()
-        const centerPointY = y + (height / 2)
-        const newHeight = ((originalHeight / originalWidth) * width) + (zoomPadding * 2)
-        setViewBox(`${x - zoomPadding} ${(centerPointY - (newHeight / 2) - zoomPadding)} ${width + (zoomPadding * 2)} ${newHeight + (zoomPadding * 2)}`)
+        const centerPointY = y + (height / 2) - yAdjustment
+        const newHeight = ((originalHeight / originalWidth) * width) + (padding * 2)
+        setViewBox(`${x - padding} ${(centerPointY - (newHeight / 2) - padding)} ${width + (padding * 2)} ${newHeight + (padding * 2)}`)
     }
 
     return (
