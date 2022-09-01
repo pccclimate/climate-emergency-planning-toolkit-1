@@ -183,7 +183,7 @@
     ],
     "requireExpansions": [
       {
-        "tile": "Minor Development",
+        "title": "Minor Development",
         "text": [
           "Minor development proposals should be guided by the requirements of the adopted policies SPT10, SPT12.9, DEV15 and DEV29, as well as the associated sections of the SPD."
         ]
