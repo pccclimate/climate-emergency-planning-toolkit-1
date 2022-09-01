@@ -23,11 +23,11 @@ export const Require = ({item}) => {
                 </AccordionSummary>
                 <AccordionDetails>
                     {item.require.map((text, i) => (
-                        <Typography key={i} sx={{pb: 1}}>
+                        <Typography key={text} sx={{pb: 1}}>
                             {text}
                         </Typography>
                     ))}
-                    {item.requireExpansions?.map((props, i) => <InnerExpansion {...props} key={i}/>)}
+                    {item.requireExpansions?.map((props, i) => <InnerExpansion {...props} key={props.text}/>)}
                 </AccordionDetails>
             </Accordion>
         </Box>
