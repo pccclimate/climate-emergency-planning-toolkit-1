@@ -30,16 +30,16 @@ const variants = {
 
 const homeLinks = [
     {
-        title: 'Residential Building',
-        link: './residential_buildings'
+        title: 'All Development & New Buildings',
+        link: './all_buildings'
     },
     {
         title: 'Commercial Building',
         link: './commercial_buildings'
     },
     {
-        title: 'Adaptations Space',
-        link: './all_buildings'
+        title: 'Residential Building',
+        link: './residential_buildings'
     }
 ]
 
@@ -48,37 +48,29 @@ const residential = [
         title: 'Extensions',
         links: [
             {
-                title: 'Renewable Energy',
-                ref: residentialRefs.renewableEnergy
-            },
-            {
-                title: 'Energy Storage',
-                ref: residentialRefs.energyStorage
-            },
-            {
                 title: 'Building Materials',
                 ref: residentialRefs.buildingMaterial
             },
             {
                 title: 'Electric Vehicles',
                 ref: residentialRefs.electricVehicles
-            }
-        ]
-    },
-    {
-        title: 'New Builds',
-        links: [
-            {
-                title: 'Renewable Energy',
-                ref: residentialRefs.renewableEnergy
             },
             {
                 title: 'Energy Storage',
                 ref: residentialRefs.energyStorage
             },
             {
-                title: 'Heating Systems',
-                ref: residentialRefs.heatingSystems
+                title: 'Renewable Energy',
+                ref: residentialRefs.renewableEnergy
+            },
+        ]
+    },
+    {
+        title: 'New Builds',
+        links: [
+            {
+                title: 'Active & Sustainable Travel',
+                ref: residentialRefs.activeTravel
             },
             {
                 title: 'Building Materials',
@@ -93,9 +85,18 @@ const residential = [
                 ref: residentialRefs.electricVehicles
             },
             {
-                title: 'Active & Sustainable Travel',
-                ref: residentialRefs.activeTravel
-            }
+                title: 'Energy Storage',
+                ref: residentialRefs.energyStorage
+            },
+            {
+                title: 'Renewable Energy',
+                ref: residentialRefs.renewableEnergy
+            },
+            {
+                title: 'Heating Systems',
+                ref: residentialRefs.heatingSystems
+            },
+
         ]
     },
 ]
@@ -103,6 +104,14 @@ const residential = [
 const allBuildings = [
     {
      links: [
+         {
+             title: 'Biodiversity & Habitat',
+             ref: allBuildingsRefs.biodiversity
+         },
+         {
+             title: 'Green Spaces ',
+             ref: allBuildingsRefs.green
+         },
          {
              title: 'Passive Solar Design',
              ref: allBuildingsRefs.solar
@@ -116,17 +125,9 @@ const allBuildings = [
              ref: allBuildingsRefs.tree
          },
          {
-             title: 'Green Spaces ',
-             ref: allBuildingsRefs.green
-         },
-         {
              title: 'Water Management & Urban Creep ',
              ref: allBuildingsRefs.water
          },
-         {
-             title: 'Biodiversity & Habitat',
-             ref: allBuildingsRefs.biodiversity
-         }
      ]
     }
 ]
@@ -136,37 +137,29 @@ const commercialBuildings = [
         title: 'Extensions',
         links: [
             {
-                title: 'Renewable Energy',
-                ref: commercialRef.renewableEnergy
-            },
-            {
-                title: 'Energy Storage',
-                ref: commercialRef.energyStorage
-            },
-            {
                 title: 'Building Materials',
                 ref: commercialRef.buildingMaterial
             },
             {
                 title: 'Electric Vehicles',
                 ref: commercialRef.electricVehicles
-            }
-        ]
-    },
-    {
-        title: 'New Builds',
-        links: [
-            {
-                title: 'Renewable Energy',
-                ref: commercialRef.renewableEnergy
             },
             {
                 title: 'Energy Storage',
                 ref: commercialRef.energyStorage
             },
             {
-                title: 'Heating Systems',
-                ref: commercialRef.heatingSystems
+                title: 'Renewable Energy',
+                ref: commercialRef.renewableEnergy
+            },
+        ]
+    },
+    {
+        title: 'New Builds',
+        links: [
+            {
+                title: 'Active & Sustainable Travel',
+                ref: commercialRef.activeTravel
             },
             {
                 title: 'Building Materials',
@@ -181,9 +174,17 @@ const commercialBuildings = [
                 ref: commercialRef.electricVehicles
             },
             {
-                title: 'Active & Sustainable Travel',
-                ref: commercialRef.activeTravel
-            }
+                title: 'Energy Storage',
+                ref: commercialRef.energyStorage
+            },
+            {
+                title: 'Heating Systems',
+                ref: commercialRef.heatingSystems
+            },
+            {
+                title: 'Renewable Energy',
+                ref: commercialRef.renewableEnergy
+            },
         ]
     }
 ]
@@ -195,7 +196,7 @@ const HomeLinksComponent = ({setTopMenu}) => {
         <MenuList>
             {homeLinks.map(({title, link}) => (
                 <Link key={link} href={link}>
-                    <MenuItem onClick={() => setTopMenu(false)} selected={`.${pathname}` === link}>
+                    <MenuItem onClick={() => setTopMenu(false)} selected={`.${pathname}` === link} style={{whiteSpace: 'normal'}}>
                         <ListItemText>{title}</ListItemText>
                     </MenuItem>
                 </Link>
