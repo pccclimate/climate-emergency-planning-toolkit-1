@@ -20,7 +20,7 @@
         "text": "Building Regulation Approved Document Part L has been updated in December 2021 and introduced in June 2022, and this introduces higher standards of thermal efficiency for buildings. As such, it is appropriate to ensure that the DEV32.5 20% carbon reduction requirement is only secured through onsite renewable energy generation, with no mechanism to count alternative savings through a fabric first approach (as this has already been incorporated into the 2021 Part L uplift)."
       },
       {
-        "text": "Favourable conditions for extensions include no overshading of the proposed roof, with the roof having an easterly, southerly or westerly aspect. A 1 kWp is likely to comprise of at least 4 solar PV panels."
+        "text": "Favourable conditions for extensions include no overshading of the proposed roof, with the roof having an easterly, southerly or westerly aspect. A 1 kWp system is likely to comprise of at least 4 solar PV panels."
       },
       {
         "text": "Approved Document Part L 2021",
@@ -61,7 +61,7 @@
     "introSummary":"The following requirement applies to all new buildings. There are no requirements for extensions.",
     "introText": [
       "In order to meet binding legislative carbon reduction targets, the UK needs to rapidly decarbonise all aspects of societal behaviour. ",
-      "Reducing reliance on fossil fuels is the single biggest action that will contribute to rapid decarbonisation. For many, this will result in the installation of a heat pump, although other systems may also meet the wider policy aims, such as biomass boilers, solar thermal heating, micro hydro-electricity or mini combined heat and power systems."
+      "Reducing reliance on fossil fuels is the single biggest action that will contribute to rapid decarbonisation. For many, this will result in the installation of a heat pump, although other systems may also meet the wider policy aims, such as solar thermal heating and biomass boilers."
     ],
     "require": [
       "All minor and major development proposals should be served by low or zero carbon space and water heating and where relevant cooling systems, with an emphasis on ground, air and water source heat pumps. Other options for low carbon heating systems include solar thermal/ solar thermodynamic/ or solar photovoltaic thermal (PVT) systems or biomass in rural areas."
@@ -75,6 +75,9 @@
       },
       {
         "text": "Hydrogen based systems are not considered compatible with the aims of this policy, as the fuel is not proven at scale for domestic or commercial buildings, and only ‘green’ energy is low or zero carbon, with grey or blue hydrogen being formed from fossil fuels."
+      },
+      {
+        "text": "Where three phase electricity supply is available this must be fully enabled internally, to support the full range of low carbon technologies available to the occupants now and in the future."
       },
       {
         "text": "The Renewable Energy Hub",
@@ -93,7 +96,7 @@
       "The number and type of materials used to construct a building is extensive, and the planning process rarely seeks to influence materials used in construction, except where there may be an issue of visual impact. However, as well considering the colour and tone of certain materials, DEV32.1 requires us to reduce the wider environmental impact of building materials, and this requirement is rarely considered or conditioned."
     ],
     "require": [
-      "Slate used on all new buildings with pitched roofs and natural stone used for paving must accord with the hierarchy of origin as well as meeting the requirements to be compatible with local vernacular and design:",
+      "Slate used on all new buildings with pitched roofs and/or natural stone used for paving must accord with the hierarchy of origin as well as meeting the requirements to be compatible with local vernacular and design:",
       "• Reclaimed UK or European slates where available with proof of origin from supplier",
       "• New UK derived slates with proof of origin from supplier",
       "• New European derived slates with proof of origin from supplier",
@@ -114,7 +117,7 @@
     "title": "Demolition & Rebuild",
     "introSummary": "The following requirement applies to new builds. There are no requirements for extensions.",
     "introText": [
-      "The JLP policies Dev 31 and DEV32.1 advocate reuse, recycling and resource minimisation through the development process. In 2019, the Architects Journal launched their RetroFirst campaign, which seeks to ensure that our existing buildings in the UK are only demolished and replaced as a last resort, and where retrofitting is proven to be not technically feasible. However, we recognise that there are some circumstances when demolition may be necessary."
+      "The JLP policies Dev31 and DEV32.1 advocate reuse, recycling and resource minimisation through the development process. In 2019, the Architects Journal launched their RetroFirst campaign, which seeks to ensure that our existing buildings in the UK are only demolished and replaced as a last resort, and where retrofitting is proven to be not technically feasible. However, we recognise that there are some circumstances when demolition may be necessary."
     ],
     "require": [
       "Priority will be given to the reuse and retrofitting of buildings. Where an existing building is proposed to be demolished and rebuilt, the net overall carbon cost of the project should be offset within 25 years through carbon savings achieved by operational use of the replacement building. ",
@@ -138,7 +141,7 @@
         "text": "2. The demolition and rebuild will result in significant social and environmental benefits, such as large-scale regeneration, and affordable-housing led development proposals"
       },
       {
-        "text": "((T x floorspace) x 25) – (D x floorspace) x 25)) = more than or equal to the net embodied carbon of original and new structure."
+        "text": "((TER x floorspace) x 25) – (DER x floorspace) x 25)) = more than or equal to the net embodied carbon of original and new structure."
       },
       {
         "text": "Architects Journal RetroFirst",

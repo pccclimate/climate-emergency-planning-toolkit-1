@@ -48,20 +48,20 @@ const residential = [
         title: 'Extensions',
         links: [
             {
-                title: 'Building Materials',
-                ref: residentialRefs.buildingMaterial
+                title: 'Renewable energy (M1)',
+                ref: residentialRefs.renewableEnergy
             },
             {
-                title: 'Electric Vehicles',
-                ref: residentialRefs.electricVehicles
-            },
-            {
-                title: 'Energy Storage',
+                title: 'Energy storage (M2)',
                 ref: residentialRefs.energyStorage
             },
             {
-                title: 'Renewable Energy',
-                ref: residentialRefs.renewableEnergy
+                title: 'Building materials (M4)',
+                ref: residentialRefs.buildingMaterial
+            },
+            {
+                title: 'Electric vehicles (M6)',
+                ref: residentialRefs.electricVehicles
             },
         ]
     },
@@ -69,34 +69,33 @@ const residential = [
         title: 'New Builds',
         links: [
             {
-                title: 'Active & Sustainable Travel',
-                ref: residentialRefs.activeTravel
-            },
-            {
-                title: 'Building Materials',
-                ref: residentialRefs.buildingMaterial
-            },
-            {
-                title: 'Demolition & Rebuild',
-                ref: residentialRefs.demolition
-            },
-            {
-                title: 'Electric Vehicles',
-                ref: residentialRefs.electricVehicles
-            },
-            {
-                title: 'Energy Storage',
-                ref: residentialRefs.energyStorage
-            },
-            {
-                title: 'Renewable Energy',
+                title: 'Renewable energy (M1)',
                 ref: residentialRefs.renewableEnergy
             },
             {
-                title: 'Heating Systems',
+                title: 'Energy storage (M2)',
+                ref: residentialRefs.energyStorage
+            },
+            {
+                title: 'Heating systems (M3)',
                 ref: residentialRefs.heatingSystems
             },
-
+            {
+                title: 'Building materials (M4)',
+                ref: residentialRefs.buildingMaterial
+            },
+            {
+                title: 'Demolition and rebuild (M5)',
+                ref: residentialRefs.demolition
+            },
+            {
+                title: 'Electric vehicles (M6)',
+                ref: residentialRefs.electricVehicles
+            },
+            {
+                title: 'Active and sustainable travel (M7)',
+                ref: residentialRefs.activeTravel
+            }
         ]
     },
 ]
@@ -105,29 +104,29 @@ const allBuildings = [
     {
      links: [
          {
-             title: 'Biodiversity & Habitat',
-             ref: allBuildingsRefs.biodiversity
-         },
-         {
-             title: 'Green Spaces ',
-             ref: allBuildingsRefs.green
-         },
-         {
-             title: 'Passive Solar Design',
+             title: 'Passive solar design (A1)',
              ref: allBuildingsRefs.solar
          },
          {
-             title: 'Soil Resource',
+             title: 'Soil resource (A2)',
              ref: allBuildingsRefs.soil
          },
          {
-             title: 'Tree Cover',
+             title: 'Tree cover (A3)',
              ref: allBuildingsRefs.tree
          },
          {
-             title: 'Water Management & Urban Creep ',
+             title: 'Green spaces (A4)',
+             ref: allBuildingsRefs.green
+         },
+         {
+             title: 'Water management and urban creep (A5)',
              ref: allBuildingsRefs.water
          },
+         {
+             title: 'Biodiversity and habitat (A6)',
+             ref: allBuildingsRefs.biodiversity
+         }
      ]
     }
 ]
@@ -137,53 +136,53 @@ const commercialBuildings = [
         title: 'Extensions',
         links: [
             {
-                title: 'Building Materials',
-                ref: commercialRef.buildingMaterial
+                title: 'Renewable energy (M1)',
+                ref: commercialRef.renewableEnergy
             },
             {
-                title: 'Electric Vehicles',
-                ref: commercialRef.electricVehicles
-            },
-            {
-                title: 'Energy Storage',
+                title: 'Energy storage (M2)',
                 ref: commercialRef.energyStorage
             },
             {
-                title: 'Renewable Energy',
-                ref: commercialRef.renewableEnergy
+                title: 'Building materials (M4)',
+                ref: commercialRef.buildingMaterial
             },
+            {
+                title: 'Electric vehicles (M6)',
+                ref: commercialRef.electricVehicles
+            }
         ]
     },
     {
         title: 'New Builds',
         links: [
             {
-                title: 'Active & Sustainable Travel',
-                ref: commercialRef.activeTravel
+                title: 'Renewable energy (M1)',
+                ref: commercialRef.renewableEnergy
             },
             {
-                title: 'Building Materials',
-                ref: commercialRef.buildingMaterial
-            },
-            {
-                title: 'Demolition & Rebuild',
-                ref: commercialRef.demolition
-            },
-            {
-                title: 'Electric Vehicles',
-                ref: commercialRef.electricVehicles
-            },
-            {
-                title: 'Energy Storage',
+                title: 'Energy storage (M2)',
                 ref: commercialRef.energyStorage
             },
             {
-                title: 'Heating Systems',
+                title: 'Heating systems (M3)',
                 ref: commercialRef.heatingSystems
             },
             {
-                title: 'Renewable Energy',
-                ref: commercialRef.renewableEnergy
+                title: 'Building materials (M4)',
+                ref: commercialRef.buildingMaterial
+            },
+            {
+                title: 'Demolition and rebuild (M5)',
+                ref: commercialRef.demolition
+            },
+            {
+                title: 'Electric vehicles (M6)',
+                ref: commercialRef.electricVehicles
+            },
+            {
+                title: 'Active and sustainable travel (M7)',
+                ref: commercialRef.activeTravel
             },
         ]
     }

@@ -2,6 +2,7 @@
   "solar": {
     "title": "Passive Solar Design",
     "introText": [
+      "As the world gets hotter our buildings will need to adapt to rising temperatures.  Building design will need to make best use of heat from the sun to create a comfortable internal temperature, whilst avoiding overheating when the sun is at its hottest.",
      "The benefit of including passive solar design information at planning application stage is that it can be amended during the consideration of the application. This is preferable to identifying and issue at the inspection stage as to rectify any issues then is likely to result in resubmission of planning information and expensive reconstruction of the building."
     ],
     "require": [
@@ -11,10 +12,13 @@
     ],
     "further": [
       {
+        "text": "Building design should avoid relying upon ‘bolt-on’ technologies like air conditioning units to cool the internal temperature of the building. Mechanical heat recovery and ventilation systems could be suitable technology to use as the air tightness of buildings improves, although care should be taken to ensure that the energy demand from these systems is kept to a minimum, and ideally offset completely by onsite renewable generation."
+      },
+      {
         "text": "Approved document Part O – Overheating applies to all new buildings and extensions, and includes specific window to floor ratios that need to be adhered to in each elevation. The checklist is a summary document that collates all of the room and window data into a concise format. "
       },
       {
-        "text": "The opportunities for maximising the cooling benefits of planting should not be restricted to areas surrounding a building, but also within the fabric of the building itself. As global temperatures rise, we will need to look at whole systems approaches to reducing the risk of overheating, not just in the design and orientation of buildings themselves, but through managing the relationship between buildings and their surroundings. Green walls and roofs offer significant potential to reduce the risk of overheating, whilst also benefitting biodiversity and habitat creation. All proposals should therefore demonstrate what additional adaptation measures are included to reduce the risk of overheating."
+        "text": "JLP Policy SPT2 seeks to reduce the use of energy through design. The opportunities for maximising the cooling benefits of planting should not be restricted to areas surrounding a building, but also within the fabric of the building itself. As global temperatures rise, we will need to look at whole systems approaches to reducing the risk of overheating, not just in the design and orientation of buildings themselves, but through managing the relationship between buildings and their surroundings. Green walls and roofs offer significant potential to reduce the risk of overheating, whilst also benefitting biodiversity and habitat creation. All proposals should therefore demonstrate what additional adaptation measures are included to reduce the risk of overheating."
       },
       {
         "text": "Further guidance on green walls and roofs will be made available."
@@ -69,7 +73,7 @@
   },
   "water":{
     "title": "Delivering Sustainable Drainage, Surface Water Management & Restricting Urban Creep",
-    "introText": ["The ability to absorb water through permeable surfaces reduces the need to manage water offsite, which in turn reduces the risk of flooding. Urban creep is the gradual paving of porous surfaces and leads to an increased need to manage surface water. Good water management onsite will also assist in supporting biodiversity and habitats, as well as reducing the risk of overheating."],
+    "introText": ["JLP policy DEV35 requires sustainable water management measures. The ability to absorb water through permeable surfaces reduces the need to manage water offsite, which in turn reduces the risk of flooding. Urban creep is the gradual paving of porous surfaces and leads to an increased need to manage surface water. Good water management onsite will also assist in supporting biodiversity and habitats, as well as reducing the risk of overheating."],
     "require": [
       "The Climate Emergency Compliance Form should demonstrate how surface water will be managed to ensure sustainable water drainage and reduced flood risk. "
     ],
