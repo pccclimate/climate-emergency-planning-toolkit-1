@@ -12,8 +12,8 @@ import {useRouter} from "next/router";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import {GlossaryPage} from "./Glossary";
 
-const transition = { ease: "linear", duration: 1}
-const transition2 = { ease: "linear", duration: 1, opacity: {delay: 1.5}}
+const transition = { ease: "linear", duration: 1, delay: 0.6 }
+const transition2 = { ease: "linear", duration: 1, opacity: {delay: 2}}
 const variants = {
     hidden: { opacity: 0 },
     enter: { opacity: 1},
@@ -79,7 +79,7 @@ const MainContent = ({title, svg}) => {
                         transition={{ ease: "easeIn", duration: 0.5, delay: 1}}
                         exit={{opacity: 0}}
                     >
-                        <Typography variant={'h3'} sx={{textAlign: 'center', mt: 1, zIndex: 10, position: 'relative', mb: 2}}>
+                        <Typography variant={'h4'} sx={{textAlign: 'center', mt: 1, zIndex: 10, position: 'relative', mb: 3}}>
                             {title}
                         </Typography>
                     </motion.div>)}
@@ -110,8 +110,8 @@ const MainContent = ({title, svg}) => {
                     <motion.div
                         key='svg'
                         layout
-                        initial={{flex: 4, maxWidth: 1100}}
-                        animate={{ flex: 4, maxWidth: 1100 }}
+                        initial={{flex: 2, maxWidth: 1100}}
+                        animate={{ flex: 2, maxWidth: 1100 }}
                         transition={{ ease: "linear", duration: 1}}
                     >
                         <Box sx={{ position: 'relative', m: 'auto', maxWidth: 900 }}>
@@ -136,7 +136,7 @@ const MainContent = ({title, svg}) => {
                                 key='info'
                                 animate={{ opacity: 1 }}
                                 exit={{opacity: 0 }}
-                                transition={transition}
+                                transition={transition2}
                                 initial={{opacity: 0 }}
                             >
                                 <Require item={selectedData} />

@@ -7,6 +7,7 @@ import {allBuildingsRefs} from "../data/allBuildingsRefs";
 
 const SVGStyle = styled.div`
   clip-path: inset(0% 0% 5% 0% round 58% 57% 96% 57%);
+  .cls-99{clip-path:url(#clippath);}
   .cls-1{fill:#988b80;}.cls-1,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9,.cls-10,.cls-11,.cls-12,.cls-13,.cls-14,.cls-15,.cls-16,.cls-17,.cls-18,.cls-19,.cls-20,.cls-21,.cls-22,.cls-23,.cls-24,.cls-25,.cls-26,.cls-27,.cls-28,.cls-29,.cls-30,.cls-31,.cls-32,.cls-33,.cls-34,.cls-35,.cls-36,.cls-37,.cls-38,.cls-39,.cls-40,.cls-41,.cls-42,.cls-43,.cls-44,.cls-45,.cls-46,.cls-47,.cls-48,.cls-49,.cls-50,.cls-51,.cls-52,.cls-53,.cls-54,.cls-55,.cls-56,.cls-57,.cls-58,.cls-59,.cls-60,.cls-61,.cls-62,.cls-63{fill-rule:evenodd;}.cls-2{fill:#605247;}.cls-3{fill:#77a82b;}.cls-64{fill:#c9b1a1;}.cls-65{stroke-width:1.75523px;}.cls-65,.cls-21,.cls-33,.cls-37,.cls-66,.cls-67{fill:#7c402e;stroke:#7c402e;stroke-linecap:round;stroke-linejoin:round;}.cls-68,.cls-69,.cls-70{fill:#fff;}.cls-4{fill:#c4b5a2;}.cls-71{fill:#ad8a73;}.cls-5{fill:#d5cabf;}.cls-72{fill:#dbdbdb;}.cls-73{fill:#18525c;}.cls-74{fill:#e3ddd3;}.cls-6{fill:#958474;}.cls-75{fill:#6d7f29;}.cls-7{fill:#877e6d;}.cls-8{fill:#968773;}.cls-9{fill:#c4b5a3;}.cls-76{opacity:.6;}.cls-76,.cls-10,.cls-77{mix-blend-mode:multiply;}.cls-76,.cls-78{fill:#ccc;}.cls-10,.cls-69,.cls-79,.cls-80,.cls-81{opacity:.3;}.cls-77{fill:#ebe9e9;}.cls-11{fill:#756658;}.cls-82{fill:#9b8579;}.cls-12,.cls-83{fill:#92c020;}.cls-84{fill:#cbc2b6;}.cls-85{isolation:isolate;}.cls-86{fill:#4d4d4d;}.cls-87{fill:#95b3c6;}.cls-13{fill:#585045;}.cls-14{fill:#857566;}.cls-15{fill:#7c6e5f;}.cls-16{fill:#d9e021;}.cls-17{fill:#4e3e35;}.cls-88{fill:#63849c;}.cls-18{fill:#847565;}.cls-69,.cls-80,.cls-89,.cls-70{mix-blend-mode:overlay;}.cls-19{fill:#c3b4a1;}.cls-20{fill:#383128;}.cls-21{stroke-width:.6196px;}.cls-90{fill:#fff0e6;}.cls-22{fill:#968a79;}.cls-23{fill:#b7a999;}.cls-91{fill:#ffa509;}.cls-24{fill:#335710;}.cls-25{fill:#b8a68e;}.cls-26{fill:#a59986;}.cls-92{fill:#6d6e71;}.cls-27{fill:#9d8873;}.cls-93{opacity:.11;}.cls-28{fill:#948373;}.cls-29{fill:#6e5f52;}.cls-94{fill:#f7931e;}.cls-30{fill:#329ad1;}.cls-31{fill:#cdc0b2;}.cls-32{fill:#4d4339;}.cls-33{stroke-width:.76123px;}.cls-34{fill:#948471;}.cls-35{fill:#a5cd39;}.cls-95{fill:#ead4c5;}.cls-36{fill:#675c53;}.cls-96{fill:#227482;}.cls-37{stroke-width:.92255px;}.cls-97{fill:#ffd011;}.cls-38{fill:#6e5f51;}.cls-66{stroke-width:2.61343px;}.cls-39{fill:#837364;}.cls-40{fill:#ab9f94;}.cls-41{fill:#998c80;}.cls-98{fill:#c58652;}.cls-100{fill:#38949c;}.cls-42,.cls-101{fill:#dce8ef;}.cls-43{fill:#b3a18a;}.cls-44{fill:#4f4439;}.cls-45{fill:#5d5145;}.cls-46{fill:#1b76bc;}.cls-47{fill:#5c8d2b;}.cls-102{fill:#c1a795;}.cls-48{fill:#5c4f44;}.cls-103{fill:#efd7ca;}.cls-104{fill:#483f3f;}.cls-105{fill:#3ca2ab;}.cls-49{fill:#90816e;}.cls-67{stroke-width:2.15644px;}.cls-50{fill:#aa9884;}.cls-106,.cls-61{fill:#999;}.cls-51{fill:#a5998c;}.cls-89,.cls-70{opacity:.1;}.cls-107{fill:#323232;opacity:.09;}.cls-52{fill:#584c41;}.cls-53{fill:#8a7765;}.cls-108{fill:#b3b3b3;}.cls-109{fill:#75727d;}.cls-110{fill:#ddc6b6;}.cls-54{fill:#7d6d5f;}.cls-55{fill:#9e9181;}.cls-111{fill:#bbc15d;}.cls-112{fill:#4a4544;}.cls-113{fill:#655a59;}.cls-56{fill:#8d7e6c;}.cls-114{fill:#87828f;}.cls-57,.cls-115{fill:#6e9018;}.cls-116{opacity:.22;}.cls-116,.cls-81{mix-blend-mode:screen;}.cls-58{fill:#9d8e79;}.cls-81{fill:#b1b1b1;}.cls-117{fill:#86a03f;}.cls-101{clip-rule:evenodd;}.cls-118{fill:#006639;}.cls-59{fill:#65584c;}.cls-60{fill:#8ac92b;}.cls-62{fill:#456e1c;}.cls-119{fill:#f2f2f2;}.cls-120{fill:#e7e3da;}.cls-121{fill:#ae6d36;}.cls-63{fill:#685a4e;}
 `
 const zoomPadding = 15
@@ -67,6 +68,10 @@ export const AllSVG = () => {
                 animate={selected ? 'zoomed' : 'initial'}
                 transition={{ delay: 0.2, ease: "linear", duration: 1 }}
             >
+                <clipPath id="clippath">
+                    <path id="Fill-1-2" className="cls-101"
+                          d="M884.29624,610.50287c-105.9456,72.6836-240.4297,125.99109-379.81133,129.37593l-5.05339,.11326c-25.2182,.40642-50.6019-.78291-75.82983-3.4981-41.25463-4.35095-82.08085-12.68304-121.16905-24.43997-.16068-.03665-.26776-.0733-.37488-.11326-11.46989-3.42149-22.77426-7.13945-33.91798-11.12058-40.1203-14.46876-77.95247-32.43562-111.81689-53.26754-2.50235-1.48921-4.95115-3.05167-7.39507-4.57752-9.40084-5.99007-18.42681-12.16335-27.1266-18.55985C22.97803,551.8749-14.08948,452.92566,4.72193,366.95935c18.97207-85.92968,129.2347-169.52821,228.33052-237.89749C331.87564,60.54265,402.8332,7.3593,519.387,.70294c116.53924-6.65969,266.75616,34.48167,372.97446,103.00088,105.9456,68.41259,162.34646,172.8285,166.47488,262.03307,4.07478,89.0913-68.32187,172.26229-174.5401,244.76599"/>
+                </clipPath>
             <g className="cls-85">
                 <g id="Layer_1">
                     <g>
@@ -2329,7 +2334,7 @@ export const AllSVG = () => {
                         </g>
                     </g>
                     <g id={'sun'}
-                       className={` ${ selected ? '' : 'clickable'}`}
+                       className={`megaGlow ${ selected ? '' : 'clickable'}`}
                        onClick={() => setSelected(allBuildingsRefs.solar)}
                        ref={solarRef}>
                         <path className="cls-91"
