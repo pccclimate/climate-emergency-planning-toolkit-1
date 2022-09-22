@@ -1,5 +1,5 @@
 import Layout from "../Components/Layout";
-import {Box, Container, Typography} from "@mui/material";
+import {Box, Container, Typography, useMediaQuery} from "@mui/material";
 import allBuildings from '../assets/all-developments.svg'
 import residential from '../assets/residential.svg'
 import commercial from '../assets/commercial.svg'
@@ -51,6 +51,7 @@ const Style = {
 }
 
 export default function Home() {
+    const lg = useMediaQuery('(max-width:700px)');
   return (
     <Layout>
         <Container>
@@ -74,11 +75,11 @@ export default function Home() {
                     To view the requirements, please click on the images below for the relevant development type.
                 </Typography>
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'end', flexWrap: 'wrap'}}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'start', flexWrap: 'wrap'}}>
                 {links.map(({title, text, img, link}) => (
                     <Link href={link} key={title}>
                         <Box sx={Style}>
-                            <Typography sx={{ mb: 4, textAlign: 'center' }} variant={'h5'}>{title}</Typography>
+                            <Typography sx={{ mb: 4, textAlign: 'center', minHeight: lg ? 0 : 70 }} variant={'h5'}>{title}</Typography>
                             <Box sx={{ width: '100%', m: 'auto', maxWidth: 330}}>
                                 <SVG
                                     src={img.src}
