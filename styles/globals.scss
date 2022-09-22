@@ -29,3 +29,7 @@ a {
     filter: drop-shadow(0px 0px 16px rgb(255 255 255 / 1));
   }
 }
+
+.MuiButtonBase-root.MuiAccordionSummary-root {
+  background: rgba(23, 59, 102, 0.1);
+}
