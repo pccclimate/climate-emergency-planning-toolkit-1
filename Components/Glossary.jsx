@@ -144,13 +144,21 @@ const text = [
 export const GlossaryPage = () => {
     return (
         <Box>
-            <Typography variant={'h2'} px={2} py={5}>Glossary</Typography>
+            <Typography variant={'h2'} px={2} pt={5}>Glossary</Typography>
             {text.map(({text, title}) => (
                 <Box key={title} sx={{ py: 3, px: 2}}>
                     <Typography variant={'h6'}>{title}</Typography>
                     <Typography>{text}</Typography>
                 </Box>
             ))}
+            <Box sx={{ py: 3, px: 2}}>
+                <Typography variant={'h6'}>Class E</Typography>
+                <Typography>The Town and Country Planning (Use Classes) Order 1987 (as amended) introduced a new
+                    use class E – Commercial, Business and Service. This covers a variety of uses including retail,
+                    restaurant and café, financial and professional services, indoor sport, recreation and fitness,
+                    medical or health services, crèche or day centre, offices, research and development and
+                    industrial services. Further detail can be found <a href='https://www.planningportal.co.uk/permission/common-projects/change-of-use/use-classes' target='_blank'>here</a>.</Typography>
+            </Box>
         </Box>
     )
 }
