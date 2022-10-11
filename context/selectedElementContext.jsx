@@ -7,8 +7,9 @@ export const SelectedContext = createContext({
 
 export const SelectedProvider = ({children}) => {
     const [selected, setSelected] = useState(undefined)
+    const [hover, setHover] = useState(undefined)
     return (
-        <SelectedContext.Provider value={{ selected, setSelected}} >
+        <SelectedContext.Provider value={{ selected, setSelected, hover, setHover}} >
             {children}
         </SelectedContext.Provider>
     )

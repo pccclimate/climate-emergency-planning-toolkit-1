@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import Link from 'next/link'
 import {useRouter} from "next/router";
-import {AnimatePresence, motion} from "framer-motion";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import {useContext, useEffect, useState} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
@@ -21,52 +20,25 @@ import {commercialRef} from "../data/commercialRef";
 import {Glossary} from "./buildingPages";
 import MenuIcon from '@mui/icons-material/Menu';
 
-const variants = {
-    hidden: { opacity: 0, y: 0, x: -100 },
-    enter: { opacity: 1, y: 0, x: 0},
-    exit: { opacity: 0, y: 0, x: -100 },
-}
-
-
 const homeLinks = [
     {
-        title: 'All Development & New Buildings',
-        link: './all_buildings'
+        title: 'Mitigation measures for residential development',
+        link: './residential_buildings'
     },
+    ,
     {
-        title: 'Commercial Building',
+        title: 'Mitigation measures for other development',
         link: './commercial_buildings'
     },
     {
-        title: 'Residential Building',
-        link: './residential_buildings'
+        title: 'Adaption measures for all development',
+        link: './all_buildings'
     }
 ]
 
 const residential = [
     {
-        title: 'Extensions',
-        links: [
-            {
-                title: 'Renewable energy (M1)',
-                ref: residentialRefs.renewableEnergy
-            },
-            {
-                title: 'Energy storage (M2)',
-                ref: residentialRefs.energyStorage
-            },
-            {
-                title: 'Building materials (M4)',
-                ref: residentialRefs.buildingMaterial
-            },
-            {
-                title: 'Electric vehicles (M6)',
-                ref: residentialRefs.electricVehicles
-            },
-        ]
-    },
-    {
-        title: 'New Builds',
+        title: 'Mitigation measures',
         links: [
             {
                 title: 'Renewable energy (M1)',
@@ -133,28 +105,7 @@ const allBuildings = [
 
 const commercialBuildings = [
     {
-        title: 'Extensions',
-        links: [
-            {
-                title: 'Renewable energy (M1)',
-                ref: commercialRef.renewableEnergy
-            },
-            {
-                title: 'Energy storage (M2)',
-                ref: commercialRef.energyStorage
-            },
-            {
-                title: 'Building materials (M4)',
-                ref: commercialRef.buildingMaterial
-            },
-            {
-                title: 'Electric vehicles (M6)',
-                ref: commercialRef.electricVehicles
-            }
-        ]
-    },
-    {
-        title: 'New Builds',
+        title: 'Mitigation measures',
         links: [
             {
                 title: 'Renewable energy (M1)',
@@ -193,6 +144,15 @@ const HomeLinksComponent = ({setTopMenu}) => {
 
     return (
         <MenuList>
+            <Link href={'/'}>
+                <MenuItem>
+                    <ListItemIcon>
+                        <ArrowBackIosNewIcon />
+                    </ListItemIcon>
+                    <ListItemText>Home</ListItemText>
+                </MenuItem>
+            </Link>
+            <Divider />
             {homeLinks.map(({title, link}) => (
                 <Link key={link} href={link}>
                     <MenuItem onClick={() => setTopMenu(false)} selected={`.${pathname}` === link} style={{whiteSpace: 'normal'}}>
@@ -211,7 +171,7 @@ const nav = {
 }
 
 const DrillDownMenu = ({setTopMenu}) => {
-    const { selected, setSelected } = useContext(SelectedContext)
+    const { selected, setSelected, setHover, hover } = useContext(SelectedContext)
     const {pathname} = useRouter()
     const navigation = nav[pathname]
 
@@ -236,7 +196,14 @@ const DrillDownMenu = ({setTopMenu}) => {
                     <Box sx={{ pb: 2 }}>
                         {title && <Typography sx={{fontWeight: 'bold', pl: 2, pt: 2, pb: 1}}>{title}</Typography>}
                         {links.map(({title, ref}, i) => (
-                            <MenuItem key={i} onClick={() => setSelected(ref)} sx={{ pl: title ? 4 : 2 }} selected={ref === selected} style={{whiteSpace: 'normal'}}>
+                            <MenuItem
+                                key={i}
+                                onClick={() => setSelected(ref)}
+                                sx={{ pl: title ? 4 : 2 }}
+                                selected={ref === selected || ref === hover}
+                                onMouseOver={() => setHover(ref)}
+                                onMouseLeave={() => setHover(undefined)}
+                                style={{whiteSpace: 'normal'}}>
                                 <ListItemText>{title}</ListItemText>
                             </MenuItem>
                         ))}

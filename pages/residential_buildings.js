@@ -9,7 +9,7 @@ export default function Page() {
         <Layout>
             <Box sx={{ display: 'flex'}}>
                 <SideMenu />
-                <BuildingPages svg={ResidentialSVG} title={'Guidance for Residential Buildings'}/>
+                <BuildingPages svg={ResidentialSVG} title={'Mitigation measures for residential development'}/>
             </Box>
         </Layout>
     )

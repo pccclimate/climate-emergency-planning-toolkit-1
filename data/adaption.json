@@ -44,7 +44,7 @@
     ]
   },
   "tree": {
-    "title": "Protecting & Enhancing Tree Cover",
+    "title": "Protecting and Enhancing Tree Cover",
     "introText": [
       "JLP policy DEV28 protects trees, woodlands and hedgerows, require net gain and appropriate mitigation. Trees are crucial in delivering a wide range of adaptation benefits and for helping to maintain our health and wellbeing; for example, spending time around trees and looking at trees can reduce stress, lower blood pressure, and improve mood."
     ],
@@ -58,7 +58,7 @@
     ]
   },
   "green": {
-    "title": "Protecting & Enhancing Gardens, Green Spaces & Greenfield Sites ",
+    "title": "Protecting and Enhancing Gardens, Green Spaces and Greenfield Sites ",
     "introText": [
       "JLP policy SPT1 and SPT2 prioritise the re-use of previously developed sites reducing the need for greenfield development. This in turn helps protect natural assets and promotes the creation of a wildlife rich local environment with well-designed public and natural spaces. These key strategic policies, along with other policies in the JLP collectively promote resilient development and the efficient use of land protecting and enhancing gardens, green spaces and greenfield sites."
     ],
@@ -72,7 +72,7 @@
     ]
   },
   "water":{
-    "title": "Delivering Sustainable Drainage, Surface Water Management & Restricting Urban Creep",
+    "title": "Delivering Sustainable Drainage, Surface Water Management and Restricting Urban Creep",
     "introText": ["JLP policy DEV35 requires sustainable water management measures. The ability to absorb water through permeable surfaces reduces the need to manage water offsite, which in turn reduces the risk of flooding. Urban creep is the gradual paving of porous surfaces and leads to an increased need to manage surface water. Good water management onsite will also assist in supporting biodiversity and habitats, as well as reducing the risk of overheating."],
     "require": [
       "The Climate Emergency Compliance Form should demonstrate how surface water will be managed to ensure sustainable water drainage and reduced flood risk. "
@@ -84,7 +84,7 @@
     ]
   },
   "biodiversity": {
-    "title": "Delivering Biodiversity Net Gain & Habitat Improvements ",
+    "title": "Delivering Biodiversity Net Gain and Habitat Improvements ",
     "introText": [
       "JLP policy DEV26 requires 10% biodiversity net gain in all major development, a proportionate approach to minor development and enhancements for wildlife from all scales of development. The SPD provides detailed guidance including provision for 30-year maintenance and acknowledges that there will be a new Biodiversity Metric and updated guidance will be required. The Environment Act increases the importance of this issue and makes 10% net gain mandatory."
     ],

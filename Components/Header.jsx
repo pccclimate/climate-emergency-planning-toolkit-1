@@ -15,7 +15,7 @@ export const Header = () => {
                     ):
                     (
                     <Box sx={{width: '100%'}}>
-                        <Box sx={{minWidth: 800, width: '100%'}}>
+                        <Box sx={{minWidth: 800, width: '100%', marginBottom: -1 }}>
                             <SVG
                                 src={Nav1.src}
                                 height={'100%'}

@@ -9,22 +9,19 @@ import {AnimatePresence, motion} from "framer-motion";
 
 const links = [
     {
-        title: 'Adaption Measures for All Buildings',
-        text: 'Guidance for all extensions & new development',
-        img: allBuildings,
-        link: './all_buildings'
-    },
-    {
-        title: 'Residential Buildings',
-        text: 'Guidance for extensions & new residential development',
+        title: 'Mitigation measures for residential development',
         img: residential,
         link: './residential_buildings'
     },
     {
-        title: 'Commercial Buildings',
-        text: 'Guidance for extensions & new commercial development',
+        title: 'Mitigation measures for other development',
         img: commercial,
         link: './commercial_buildings'
+    },
+    {
+        title: 'Adaption measures for all development',
+        img: allBuildings,
+        link: './all_buildings'
     }
 ]
 
@@ -87,7 +84,6 @@ export default function Home() {
                                     width={'100%'}
                                 />
                             </Box>
-                            <Typography sx={{ mt: 4, textAlign: 'center' }}>{text}</Typography>
                         </Box>
                     </Link>
                 ))}

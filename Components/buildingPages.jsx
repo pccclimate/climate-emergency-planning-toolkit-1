@@ -104,7 +104,7 @@ const MainContent = ({title, svg}) => {
                     </motion.div>
                     {!selectedData && (
                         <Box sx={{ position: 'absolute', top: 20, left: matches ? 0 : '10%', zIndex: 5, whiteSpace: 'normal', maxWidth: '100%' }}>
-                            <Chip label={'Click on the interactive elements for more information'} color="success" size={'small'} />
+                            <Chip label={'Click on the interactive element for more information or navigate using the side bar'} color="success" size={'small'} />
                         </Box>
                     )}
                     <motion.div

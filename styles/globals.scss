@@ -16,17 +16,21 @@ a {
 .clickable {
   cursor: pointer;
   transition: 0.5s;
-  &:hover {
+  &:hover, &.hover {
+    filter: drop-shadow(0px 0px 16px black);
+  }
+  // On black background
+  &.white:hover {
     filter: drop-shadow(0px 0px 16px white);
   }
-  &.megaGlow:hover {
-    filter: drop-shadow(0px 0px 6px black);
+  &.white.hover {
+    filter: drop-shadow(0px 0px 16px white);
   }
 }
 .clickableGroup {
   cursor: pointer;
   &:hover .clickable {
-    filter: drop-shadow(0px 0px 16px rgb(255 255 255 / 1));
+    filter: drop-shadow(0px 0px 16px black);
   }
 }
 

@@ -3,6 +3,7 @@ import {motion} from "framer-motion";
 import {SelectedContext} from "../context/selectedElementContext";
 import {useContext, useEffect, useRef, useState} from "react";
 import {commercialRef} from "../data/commercialRef";
+import {residentialRefs} from "../data/residentialRefs";
 
 const SVGStyle = styled.div`
 	clip-path: inset(0% 0% 4% 0% round 58% 57% 96% 57%);
@@ -571,7 +572,7 @@ const originalWidth = 1080
 const initView = `150 0 ${originalWidth} ${originalHeight}`
 
 export const CommercialSVG = () => {
-	const { selected, setSelected } = useContext(SelectedContext)
+	const { selected, setSelected, setHover, hover } = useContext(SelectedContext)
 	const [viewBox, setViewBox] = useState(initView)
 
 	const renewableRef = useRef(null)
@@ -708,7 +709,9 @@ export const CommercialSVG = () => {
 					<rect className="cls-107" x="992.68" y="328.39" width="15.44" height="23.17"/>
 				</g>
 				<g id="Demolition"
-				   className={`${ selected ? '' : 'clickable'}`}
+				   className={`${selected ? '' : 'clickable'} ${hover === commercialRef.demolition ? 'hover' : ''}`}
+				   onMouseLeave={() => setHover(undefined)}
+				   onMouseOver={() => setHover(commercialRef.demolition)}
 				   onClick={() => setSelected(commercialRef.demolition)}
 				   ref={demoRef}>
 					<g className="cls-58">
@@ -764,7 +767,9 @@ export const CommercialSVG = () => {
 				>
 					<g
 						ref={renewableRef}
-						className={`megaGlow ${ selected ? '' : 'clickable'}`}
+						className={`${selected ? '' : 'clickable'} ${hover === commercialRef.renewableEnergy ? 'hover' : ''}`}
+						onMouseLeave={() => setHover(undefined)}
+						onMouseOver={() => setHover(commercialRef.renewableEnergy)}
 						onClick={() => setSelected(commercialRef.renewableEnergy)}>
 						<g>
 						<g>
@@ -849,8 +854,10 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="Air_Source_Heat_Pump" ref={heatingRef} data-name="Air Source Heat Pump"
-				   className={`${ selected ? '' : 'clickable'}`}
+				   className={`${selected ? '' : 'clickable'} ${hover === commercialRef.heatingSystems ? 'hover' : ''}`}
 				   onClick={() => setSelected(commercialRef.heatingSystems)}
+				   onMouseLeave={() => setHover(undefined)}
+				   onMouseOver={() => setHover(commercialRef.heatingSystems)}
 				>
 					<g>
 						<path className="cls-72" d="M892.77,586.73c0,8.71-7.06,15.77-15.77,15.77s-15.77-7.06-15.77-15.77,7.06-15.77,15.77-15.77,15.77,7.06,15.77,15.77Z"/>
@@ -874,8 +881,10 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="EVCP" ref={electricRef}
-				   className={`${ selected ? '' : 'clickable'}`}
+				   className={`${selected ? '' : 'clickable'} ${hover === commercialRef.electricVehicles ? 'hover' : ''}`}
 				   onClick={() => setSelected(commercialRef.electricVehicles)}
+				   onMouseLeave={() => setHover(undefined)}
+				   onMouseOver={() => setHover(commercialRef.electricVehicles)}
 				>
 					<g>
 						<path className="cls-9" d="M601.78,650.58v.09c0,2.44-1.54,4.42-3.44,4.42h-157.82c-3.71,0-6.72-1.99-6.72-4.46,0-1.23,.75-2.34,1.97-3.15,1.22-.81,2.9-1.31,4.76-1.31h157.82c1.9,0,3.44,1.98,3.44,4.42Z"/>
@@ -928,8 +937,10 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="Local_Materials" ref={buildingRef} data-name="Local Materials"
-				   className={`${ selected ? '' : 'clickable'}`}
+				   className={`${selected ? '' : 'clickable'} ${hover === commercialRef.buildingMaterial ? 'hover' : ''}`}
 				   onClick={() => setSelected(commercialRef.buildingMaterial)}
+				   onMouseLeave={() => setHover(undefined)}
+				   onMouseOver={() => setHover(commercialRef.buildingMaterial)}
 				>
 					<g>
 						<polygon className="cls-73" points="629.99 638.14 627.61 639.26 630.28 639.26 629.99 638.14"/>
@@ -1131,11 +1142,13 @@ export const CommercialSVG = () => {
 				</g>
 				<g id="Roof_Battery" ref={energyRef} data-name="Roof Battery"
 				   onClick={() => setSelected(commercialRef.energyStorage)}
+				   onMouseLeave={() => setHover(undefined)}
+				   onMouseOver={() => setHover(commercialRef.energyStorage)}
 				>
 					<rect className="cls-103" x="413.09" y="334.46" width="59.17" height="68.83"/>
 					<rect className="cls-129" x="413.09" y="334.46" width="14.49" height="68.83"/>
 					<polygon className="cls-93" points="413.09 403.29 472.25 403.29 472.25 388.8 426.82 388.8 413.09 403.29"/>
-					<g className={`${ selected ? '' : 'clickable'}`}>
+					<g className={`${selected ? '' : 'white clickable'} ${hover === commercialRef.energyStorage ? 'white hover' : ''}`}>
 						<g>
 							<g>
 								<path className="cls-60" d="M457.32,364.52c0,.22-.14,.4-.3,.4h-22.12c-.17,0-.3-.18-.3-.4v-2.01c0-.22,.14-.4,.3-.4h22.12c.17,0,.3,.18,.3,.4v2.01Z"/>
@@ -1196,8 +1209,10 @@ export const CommercialSVG = () => {
 					</g>
 				</g>
 				<g id="Sustainable_Travel" ref={activeTravelRef} data-name="Sustainable Travel"
-				   className={`${ selected ? '' : 'clickable'}`}
+				   className={`${selected ? '' : 'clickable'} ${hover === commercialRef.activeTravel ? 'hover' : ''}`}
 				   onClick={() => setSelected(commercialRef.activeTravel)}
+				   onMouseLeave={() => setHover(undefined)}
+				   onMouseOver={() => setHover(commercialRef.activeTravel)}
 				>
 					<g className="cls-41">
 						<g>
