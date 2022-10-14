@@ -1,6 +1,6 @@
 {
   "renewableEnergy": {
-    "title": "Onsite Renewable Energy Generation",
+    "title": "Onsite renewable energy generation",
     "introSummary": "The following requirement applies to new buildings and some extensions with a favourable aspect.",
     "introText": [
       "Generating renewable energy onsite improves energy resilience and reduces fuel prices for occupiers. Onsite energy generation will also help reduce energy demand from the national grid, allowing more energy to be used to support the transition to electric vehicles and heat pumps, both of which are important elements of the UK decarbonisation strategy."
@@ -39,7 +39,7 @@
     ]
   },
   "energyStorage": {
-    "title": "Energy Storage",
+    "title": "Energy storage",
     "introSummary": "The following requirement applies to new buildings and extensions that include solar photovoltaic (PV).",
     "introText": ["Battery storage enables buildings to better use energy that is generated onsite, or purchased at favourable tariffs overnight when demand is low. The use of battery storage as part of smart system has benefits on the grid, as it reduces demand at peak times, and allows users to be more resilient to power outages, as well as paying less for the energy they consume."],
     "require": [
@@ -59,7 +59,7 @@
     ]
   },
   "heatingSystems": {
-    "title": "Low and Zero Carbon Space and Water Heating Systems",
+    "title": "Low and zero carbon space and water heating systems",
     "introSummary":"The following requirement applies to all new buildings. There are no requirements for extensions.",
     "introText": [
       "In order to meet binding legislative carbon reduction targets, the UK needs to rapidly decarbonise all aspects of societal behaviour. ",
@@ -92,7 +92,7 @@
     ]
   },
   "buildingMaterial":{
-    "title": "Resilient and Low Carbon Building Materials",
+    "title": "Resilient and low carbon building materials",
     "introSummary": "The following requirement applies to both new builds and extensions.",
     "introText": [
       "The number and type of materials used to construct a building is extensive, and the planning process rarely seeks to influence materials used in construction, except where there may be an issue of visual impact. However, as well considering the colour and tone of certain materials, DEV32.1 requires us to reduce the wider environmental impact of building materials, and this requirement is rarely considered or conditioned."
@@ -116,7 +116,7 @@
     ]
   },
   "demolition": {
-    "title": "Demolition and Rebuild",
+    "title": "Demolition and rebuild",
     "introSummary": "The following requirement applies to new builds. There are no requirements for extensions.",
     "introText": [
       "The JLP policies Dev31 and DEV32.1 advocate reuse, recycling and resource minimisation through the development process. In 2019, the Architects Journal launched their RetroFirst campaign, which seeks to ensure that our existing buildings in the UK are only demolished and replaced as a last resort, and where retrofitting is proven to be not technically feasible. However, we recognise that there are some circumstances when demolition may be necessary."
@@ -156,7 +156,7 @@
     ]
   },
   "electricVehicles": {
-    "title": "Electric Vehicle Charging Points",
+    "title": "Electric vehicle charging points",
     "introSummary": "The following requirement applies to new builds, buildings undergoing major renovation and extensions where the extension is adjacent to a parking space.",
     "introText": [
       "Electric vehicles represent an opportunity to reduce reliance on fossil fuels and will contribute to decarbonising transport emissions across the UK as part of the Government’s Transport Decarbonisation Plan. To ensure the transition to electric vehicles is achieved at a trajectory that secures adequate levels of emissions savings, charging infrastructure must be available and accessible in all new developments."
@@ -175,7 +175,7 @@
     ]
   },
   "activeTravel": {
-    "title": "Active and Sustainable Travel",
+    "title": "Active and sustainable travel",
     "introSummary": "The following requirement applies differently to minor and major new development schemes over 10 dwellings or 0.5 hectares and 50 dwellings. There are no requirements for extensions.",
     "introText": [
       "The location of new development should continue to be considered against the adopted spatial strategy set out in the JLP and specifically policies SPT1, SPT2 and TTV1 and TTV2. Switching to EV is not a substitute for sound placemaking based around the core principles of reducing the need to travel and maximising the use of sustainable and active travel modes. ",

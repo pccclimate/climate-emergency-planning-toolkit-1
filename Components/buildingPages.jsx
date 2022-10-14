@@ -110,8 +110,8 @@ const MainContent = ({title, svg}) => {
                     <motion.div
                         key='svg'
                         layout
-                        initial={{flex: 2, maxWidth: 1100}}
-                        animate={{ flex: 2, maxWidth: 1100 }}
+                        initial={{flex: 2 }}
+                        animate={{ flex: 2 }}
                         transition={{ ease: "linear", duration: 1}}
                     >
                         <Box sx={{ position: 'relative', m: 'auto', maxWidth: 900 }}>

@@ -189,7 +189,6 @@ export const ResidentialSVG = () => {
         zoomed: { viewBox: viewBox },
     }
 
-
     const zoomTo = (ref, padding = zoomPadding, yAdjustment = 0) => {
         const {x, y, width, height} = ref.current.getBBox()
         const centerPointY = y + (height / 2) - yAdjustment
