@@ -145,7 +145,6 @@ const SVGStyle = styled.div`
   margin-bottom: 20px;
 `
 
-const zoomPadding = 15
 const originalHeight =  739.88125
 const originalWidth = 1147.68874
 const initView = `0 0 ${originalWidth} ${originalHeight}`
@@ -165,20 +164,20 @@ export const ResidentialSVG = () => {
 
     useEffect(() => {
         if(selected === residentialRefs.renewableEnergy) {
-            zoomTo(renewableEnergyRef)
+            setViewBox('315 252 180 160')
         } else if(selected === residentialRefs.energyStorage) {
-            zoomTo(energyStorageRef)
+            setViewBox('670 120 180 160')
         }  else if(selected === residentialRefs.buildingMaterial) {
-            zoomTo(buildingRef)
+            setViewBox('392 446 180 160')
         }
         else if(selected === residentialRefs.demolition) {
-            zoomTo(demolitionRef)
+            setViewBox('656 114 180 160')
         }  else if(selected === residentialRefs.electricVehicles) {
-            zoomTo(vehicleRef)
+            setViewBox('155 418 180 160')
         }  else if(selected === residentialRefs.activeTravel) {
-            zoomTo(activeTravelRef, 20, -30)
+            setViewBox('25 427 180 160')
         }  else if(selected === residentialRefs.heatingSystems) {
-            zoomTo(heatingRef)
+            setViewBox('679 469 180 160')
         } else {
             setViewBox(initView)
         }
@@ -187,18 +186,6 @@ export const ResidentialSVG = () => {
     const viewBoxVariants = {
         initial: { viewBox: initView },
         zoomed: { viewBox: viewBox },
-    }
-
-    const zoomTo = (ref, padding = zoomPadding, yAdjustment = 0) => {
-        const {x, y, width, height} = ref.current.getBBox()
-        const centerPointY = y + (height / 2) - yAdjustment
-        const newHeight = ((originalHeight / originalWidth) * width) + (padding * 2)
-        if(selected === residentialRefs.demolition) {
-            const newWidth = ((originalWidth / originalHeight) * height) + (zoomPadding * 2)
-            setViewBox(`${x - 200} ${(centerPointY - (height / 2) - zoomPadding)} ${newWidth + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
-        } else {
-            setViewBox(`${x - padding} ${(centerPointY - (newHeight / 2) - padding)} ${width + (padding * 2)} ${newHeight + (padding * 2)}`)
-        }
     }
 
     return (
@@ -1052,6 +1039,7 @@ export const ResidentialSVG = () => {
                                             </g>
                                         </g>
                                         <path className="cls-89"
+                                              style={{ transform: 'translateX(25px) scaleX(0.8)'}}
                                               d="M154.5239,549.59291v.08021c0,2.1928-1.14978,3.97055-2.56812,3.97055H34.18022c-2.77068,0-5.01703-1.792-5.01703-4.01066,0-1.10933,.56297-2.10773,1.46813-2.83306,.91068-.72533,2.16356-1.1776,3.5489-1.1776h117.77555c1.41834,0,2.56812,1.77766,2.56812,3.97055Z"/>
                                     </g>
                                     <g>

@@ -12,8 +12,8 @@ import {useRouter} from "next/router";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import {GlossaryPage} from "./Glossary";
 
-const transition = { ease: "linear", duration: 1, delay: 0.6 }
-const transition2 = { ease: "linear", duration: 1, opacity: {delay: 2}}
+const transition = { ease: "linear", duration: 1, delay: 0.6, height: '100%' }
+const transition2 = { ease: "linear", duration: 1, opacity: {delay: 2}, height: '100%' }
 const variants = {
     hidden: { opacity: 0 },
     enter: { opacity: 1},
@@ -87,7 +87,7 @@ const MainContent = ({title, svg}) => {
                     <motion.div
                         layout
                         key='title'
-                        animate={{ opacity: 1, flex: selectedData ? 2 : 1 }}
+                        animate={{ opacity: selectedData ? 1 : 0, flex: selectedData ? 2 : 1 }}
                         transition={transition}
                         initial={{opacity: 0, flex: 1 }}
                     >
@@ -127,7 +127,7 @@ const MainContent = ({title, svg}) => {
                                         cursor: 'pointer', fontSize: 80, color: 'rgb(154, 194, 28)', stroke: 'white', strokeWidth: 0.3, transition: '0.4s', '&:hover': {color: 'rgb(35, 53, 105)'} }} />
                                 </motion.div>
                             )}
-                            <Box>
+                            <Box sx={{  margin: 'auto'}}>
                                 {svg()}
                             </Box>
                         </Box>
@@ -152,10 +152,10 @@ const MainContent = ({title, svg}) => {
                     >
                         {selectedData && (
                             <motion.div
-                                animate={{opacity: 1}}
+                                animate={{opacity: 1 }}
                                 exit={{opacity: 0}}
                                 transition={transition2}
-                                initial={{ opacity: 0}}
+                                initial={{ opacity: 0 }}
                             >
                                 <Info item={selectedData} />
                             </motion.div>
