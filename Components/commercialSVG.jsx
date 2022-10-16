@@ -585,25 +585,25 @@ export const CommercialSVG = () => {
 
 	useEffect(() => {
 		if(selected === commercialRef.renewableEnergy) {
-			zoomTo(renewableRef)
+			setViewBox('688 250 180 160')
 		}
 		if(selected === commercialRef.energyStorage) {
-			zoomTo(energyRef)
+			setViewBox('360 300 180 160')
 		}
 		if(selected === commercialRef.heatingSystems) {
-			zoomTo(heatingRef)
+			setViewBox('800 520 180 160')
 		}
 		if(selected === commercialRef.buildingMaterial) {
-			zoomTo(buildingRef)
+			setViewBox('580 550 180 160')
 		}
 		if(selected === commercialRef.demolition) {
-			zoomTo(demoRef)
+			setViewBox('240 340 180 160')
 		}
 		if(selected === commercialRef.electricVehicles) {
-			zoomTo(electricRef)
+			setViewBox('430 510 180 160')
 		}
 		if(selected === commercialRef.activeTravel) {
-			zoomTo(activeTravelRef, 10, -30)
+			setViewBox('285 500 180 160')
 		}
 
 	}, [selected])
@@ -611,18 +611,6 @@ export const CommercialSVG = () => {
 	const viewBoxVariants = {
 		initial: { viewBox: initView },
 		zoomed: { viewBox: viewBox },
-	}
-
-	const zoomTo = (ref, padding = zoomPadding, yAdjustment = 0) => {
-		const {x, y, width, height} = ref.current.getBBox()
-		const centerPointY = y + (height / 2) - yAdjustment
-		const newHeight = ((originalHeight / originalWidth) * width) + (padding * 2)
-		if(selected === commercialRef.demolition) {
-			const newWidth = ((originalWidth / originalHeight) * height) + (zoomPadding * 2)
-			setViewBox(`${x + 20} ${(centerPointY - (height / 2) - zoomPadding)} ${newWidth + (zoomPadding * 2)} ${height + (zoomPadding * 2)}`)
-		} else {
-			setViewBox(`${x - padding} ${(centerPointY - (newHeight / 2) - padding)} ${width + (padding * 2)} ${newHeight + (padding * 2)}`)
-		}
 	}
 
 	return (

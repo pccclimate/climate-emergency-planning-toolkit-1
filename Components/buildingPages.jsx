@@ -12,8 +12,8 @@ import {useRouter} from "next/router";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import {GlossaryPage} from "./Glossary";
 
-const transition = { ease: "linear", duration: 1, delay: 0.6, height: '100%' }
-const transition2 = { ease: "linear", duration: 1, opacity: {delay: 2}, height: '100%' }
+const transition = { ease: "linear", duration: 1, delay: 0.6 }
+const transition2 = { ease: "linear", duration: 1, opacity: {delay: 2} }
 const variants = {
     hidden: { opacity: 0 },
     enter: { opacity: 1},
@@ -74,10 +74,10 @@ const MainContent = ({title, svg}) => {
                     <motion.div
                         layout
                         key='header'
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1}}
-                        transition={{ ease: "easeIn", duration: 0.5, delay: 1}}
-                        exit={{opacity: 0}}
+                        initial={{ opacity: 0}}
+                        animate={{ opacity: 1 }}
+                        transition={{ ease: "easeIn", duration: 0.5, opacity: {delay: 1}}}
+                        exit={{ opacity: 0 }}
                     >
                         <Typography variant={'h4'} sx={{textAlign: 'center', mt: 1, zIndex: 10, position: 'relative', mb: 3}}>
                             {title}
@@ -85,7 +85,6 @@ const MainContent = ({title, svg}) => {
                     </motion.div>)}
                 <Box sx={{ display: 'flex', justifyContent: 'center', position: 'relative', flexDirection: matches ? 'column' : 'row'}}>
                     <motion.div
-                        layout
                         key='title'
                         animate={{ opacity: selectedData ? 1 : 0, flex: selectedData ? 2 : 1 }}
                         transition={transition}
@@ -99,7 +98,7 @@ const MainContent = ({title, svg}) => {
                                 initial={{ opacity: 0}}
                             >
                                 <TitleSections item={selectedData}/>
-                            </motion.div>
+                             </motion.div>
                         )}
                     </motion.div>
                     {!selectedData && (
@@ -108,11 +107,12 @@ const MainContent = ({title, svg}) => {
                         </Box>
                     )}
                     <motion.div
-                        key='svg'
-                        layout
+                        // key='svg'
+                        // layout
                         initial={{flex: 2 }}
                         animate={{ flex: 2 }}
                         transition={{ ease: "linear", duration: 1}}
+                        style={{ flex: 2}}
                     >
                         <Box sx={{ position: 'relative', m: 'auto', maxWidth: 900 }}>
                             {selectedData && (
@@ -133,19 +133,16 @@ const MainContent = ({title, svg}) => {
                         </Box>
                         {selectedData && (
                             <motion.div
-                                key='info'
                                 animate={{ opacity: 1 }}
                                 exit={{opacity: 0 }}
                                 transition={transition2}
                                 initial={{opacity: 0 }}
                             >
                                 <Require item={selectedData} />
-                            </motion.div>
+                             </motion.div>
                         )}
                     </motion.div>
                     <motion.div
-                        layout
-                        key='info'
                         animate={{ opacity: 1, flex: selectedData ? 2 : 1 }}
                         transition={transition}
                         initial={{opacity: 0, flex: 1 }}
@@ -158,7 +155,7 @@ const MainContent = ({title, svg}) => {
                                 initial={{ opacity: 0 }}
                             >
                                 <Info item={selectedData} />
-                            </motion.div>
+                             </motion.div>
                         )}
                     </motion.div>
 

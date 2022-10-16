@@ -3,7 +3,6 @@ import {motion} from "framer-motion";
 import {useContext, useEffect, useRef, useState} from "react";
 import {SelectedContext} from "../context/selectedElementContext";
 import {allBuildingsRefs} from "../data/allBuildingsRefs";
-import {commercialRef} from "../data/commercialRef";
 
 
 const SVGStyle = styled.div`
@@ -34,31 +33,24 @@ export const AllSVG = () => {
 
     useEffect(() => {
         if(selected === allBuildingsRefs.biodiversity){
-            zoomTo(bioRef)
+            setViewBox('570 560 180 160')
         }
         if(selected === allBuildingsRefs.tree){
-            zoomTo(treeRef, 35, -10)
+            setViewBox('290 330 180 160')
         }
         if(selected === allBuildingsRefs.soil){
-            zoomTo(soilRef)
+            setViewBox('610 460 180 160')
         }
         if(selected === allBuildingsRefs.solar){
-            zoomTo(solarRef, 50, -40)
+            setViewBox('250 120 180 160')
         }
         if(selected === allBuildingsRefs.green){
-            zoomTo(greenRef)
+            setViewBox('414 447 180 160')
         }
         if(selected === allBuildingsRefs.water){
-            zoomTo(waterRef)
+            setViewBox('245 530 180 160')
         }
     }, [selected])
-
-    const zoomTo = (ref, padding= zoomPadding, yAdjustment = 0) => {
-        const {x, y, width, height} = ref.current.getBBox()
-        const centerPointY = y + (height / 2) - yAdjustment
-        const newHeight = ((originalHeight / originalWidth) * width) + (padding * 2)
-        setViewBox(`${x - padding} ${(centerPointY - (newHeight / 2) - padding)} ${width + (padding * 2)} ${newHeight + (padding * 2)}`)
-    }
 
     return (
         <SVGStyle>
