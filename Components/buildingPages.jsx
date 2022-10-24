@@ -79,7 +79,7 @@ const MainContent = ({title, svg}) => {
                         transition={{ ease: "easeIn", duration: 0.5, opacity: {delay: 1}}}
                         exit={{ opacity: 0 }}
                     >
-                        <Typography variant={'h4'} sx={{textAlign: 'center', mt: 1, zIndex: 10, position: 'relative', mb: 3}}>
+                        <Typography variant={'h5'} component={'h1'} sx={{textAlign: 'center', mt: 1, zIndex: 10, position: 'relative', mb: 3}}>
                             {title}
                         </Typography>
                     </motion.div>)}
@@ -107,14 +107,12 @@ const MainContent = ({title, svg}) => {
                         </Box>
                     )}
                     <motion.div
-                        // key='svg'
-                        // layout
                         initial={{flex: 2 }}
                         animate={{ flex: 2 }}
                         transition={{ ease: "linear", duration: 1}}
                         style={{ flex: 2}}
                     >
-                        <Box sx={{ position: 'relative', m: 'auto', maxWidth: 900 }}>
+                        <Box sx={{ position: 'relative', m: 'auto', maxWidth: 1200 }}>
                             {selectedData && (
                                 <motion.div
                                     style={{ position: 'absolute', top: -20, left: -20, zIndex: 10 }}
