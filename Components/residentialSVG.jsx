@@ -171,7 +171,7 @@ export const ResidentialSVG = () => {
             setViewBox('392 446 180 160')
         }
         else if(selected === residentialRefs.demolition) {
-            setViewBox('656 114 180 160')
+            setViewBox('820 350 180 160')
         }  else if(selected === residentialRefs.electricVehicles) {
             setViewBox('155 418 180 160')
         }  else if(selected === residentialRefs.activeTravel) {
