@@ -29,7 +29,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Netlify
 
-https://app.netlify.com/start/deploy?repository=https://github.com/LuckyNightStudio/climate-emergency-planning-toolkit
-
-
+[![button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LuckyNightStudio/climate-emergency-planning-toolkit)
 
