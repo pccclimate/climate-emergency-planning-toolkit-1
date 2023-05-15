@@ -34,6 +34,10 @@ const text = [
         text: ['Anything storing carbon such as trees and other vegetation, forests, oceans and grasslands.']
     },
     {
+        title: 'Climate Emergency Compliance Form',
+        text: ['This is a new validation requirement for planning applications submitted from after 30 November 2022. Planning applications are required to complete this form which can be found on the local validation lists.']
+    },
+    {
         title: 'Eaves',
         text: ['The area where a roof extends a small way past the wall of a building is usually referred to as the eaves. Extending the eaves can assist with increasing shade at times when the sun is at its highest. ']
     },
